@@ -13,7 +13,11 @@ public class Interactor : MonoBehaviour
     private void Update()
     {
         var interactable = GetClosestObject();
-        
+
+        if (interactable != null)
+        {
+            
+        }
     }
 
     IInteractable GetClosestObject()
