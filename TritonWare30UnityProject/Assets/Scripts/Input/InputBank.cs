@@ -9,6 +9,7 @@ public class InputBank : MonoBehaviour
     [field:SerializeField]public Vector2 moveVector {get; private set;}
     public bool isInteractPressed => _inputActions.Gameplay.Interact.IsPressed();
     public bool wasInteractPressedThisFrame => _inputActions.Gameplay.Interact.WasPressedThisFrame();
+    public bool isRunPressed => _inputActions.Gameplay.Run.IsPressed();
     
     private PlayerInputActions _inputActions;
 
