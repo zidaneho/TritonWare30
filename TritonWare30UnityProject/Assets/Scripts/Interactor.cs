@@ -8,15 +8,22 @@ public class Interactor : MonoBehaviour
     [SerializeField] private float interactionRadius = 1.5f;
     [SerializeField] private LayerMask interactLayer;
 
+    private InputBank _input;
     private Collider2D[] results = new Collider2D[10];
+
+    private void Awake()
+    {
+        _input = GetComponent<InputBank>();
+    }
 
     private void Update()
     {
-        var interactable = GetClosestObject();
-
-        if (interactable != null)
+        
+        if (_input.wasInteractPressedThisFrame)
         {
-            
+            var interactable = GetClosestObject();
+            Debug.Log(interactable);
+            interactable?.OnInteract(this.gameObject);
         }
     }
 
