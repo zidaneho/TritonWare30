@@ -10,7 +10,7 @@ public class FlashlightComponent : MonoBehaviour
 
     private Light2D _light;
     private InputBank _input;
-    private float _battery;
+    [SerializeField] private float _battery;
     private bool _isTurnedOn; 
 
     private void Awake()

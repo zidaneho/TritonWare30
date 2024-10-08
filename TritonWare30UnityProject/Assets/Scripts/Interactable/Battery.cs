@@ -6,20 +6,13 @@ using UnityEngine;
 
 public class Battery : MonoBehaviour, IInteractable
 {
-    public GameObject flashLight;
-    private FlashlightComponent flashlightComponent;
     public string popupDescription => "Pickup";
-    private void Start()
-    {
-        // find the flashlight
-        flashLight = GameObject.FindGameObjectWithTag("flashLight");
-        flashlightComponent = flashLight.GetComponent<FlashlightComponent>(); 
-    }
 
     // When clicked on (e or mouse click)
-    public void OnInteract(GameObject interactor)
+    public void OnInteract(GameObject player)
     {
-
+        var flashlightComponent = player.GetComponentInChildren<FlashlightComponent>();
+        if (flashlightComponent == null) return;
         // restore flashlight (do not go over max)
         flashlightComponent.increaseBattery(5);  // will not go over max
         Debug.Log("Battery increased to: " + flashlightComponent.getBattery());

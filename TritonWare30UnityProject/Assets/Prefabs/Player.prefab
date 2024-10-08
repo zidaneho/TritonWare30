@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5353396988292269614}
   - component: {fileID: 4526850746553196943}
+  - component: {fileID: 5941738134163169517}
   m_Layer: 0
   m_Name: flashLight
   m_TagString: Untagged
@@ -82,6 +83,20 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &5941738134163169517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122578990620493848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d8a86821e19412891b21736a660923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 10
+  _battery: 0
 --- !u!1 &5049940676760675177
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 4
-  runSpeed: 4
+  runSpeed: 10
+  _stamina: 0
 --- !u!114 &3422571505152498872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +293,7 @@ MonoBehaviour:
   interactionRadius: 1.38
   interactLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
 --- !u!114 &594332863356316660
 MonoBehaviour:
   m_ObjectHideFlags: 0
