@@ -35,10 +35,11 @@ public class Interactor : MonoBehaviour
         for (int i = 0; i < size; i++)
         {
             var interactable = results[i].GetComponent<IInteractable>();
-            
-            if (interactable != null && Vector3.Distance(transform.position, results[i].transform.position) < shortestDistance)
+
+            var distance = Vector2.Distance(transform.position, results[i].transform.position);
+            if (interactable != null && distance < shortestDistance)
             {
-                shortestDistance = Vector3.Distance(transform.position, results[i].transform.position);
+                shortestDistance = distance;
                 closest = interactable;
             }
         }
