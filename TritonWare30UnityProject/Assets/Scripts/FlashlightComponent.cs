@@ -45,7 +45,7 @@ public class FlashlightComponent : MonoBehaviour
             _isTurnedOn = !_isTurnedOn;
         }
 
-        Debug.Log(_battery);
+        Debug.Log("Battery: " + _battery);
     }
 
     public void Toggle(bool value)

@@ -12,7 +12,8 @@ public class InputBank : MonoBehaviour
     public bool isRunPressed => _inputActions.Gameplay.Run.IsPressed();
     
     public bool wasFlashlightPressedThisFrame => _inputActions.Gameplay.Flashlight.WasPressedThisFrame();
-    
+
+    public bool wasBatteryPressedThisFrame => _inputActions.Gameplay.Battery.WasPressedThisFrame();
     
     private PlayerInputActions _inputActions;
 
