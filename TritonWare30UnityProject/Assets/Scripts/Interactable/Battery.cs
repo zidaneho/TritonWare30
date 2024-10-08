@@ -11,7 +11,7 @@ public class Battery : MonoBehaviour, IInteractable
     
     void Start()
     {
-        _input = GetComponentInParent<InputBank>();
+        // _input = GetComponentInParent<InputBank>();
     }
     
     public void OnInteract(GameObject interactor)
