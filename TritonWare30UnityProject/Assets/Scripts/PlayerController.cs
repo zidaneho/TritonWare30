@@ -3,43 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachine
+public class MonsterController : MonoBehaviour
 {
-    public IState currentState;
-    public IState defaultState;
-
-    public void Update()
-    {
-        currentState?.OnUpdate();
-    }
-
-    public void FixedUpdate()
-    {
-        currentState?.OnFixedUpdate();
-    }
-}
-
-public class BaseMonsterState : IState
-{
-    public void OnEnter()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnUpdate()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnFixedUpdate()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnExit()
-    {
-        throw new NotImplementedException();
-    }
+    [SerializeField] private Transform waypoints;
+    
+    
 }
 
 public class PlayerController : MonoBehaviour
