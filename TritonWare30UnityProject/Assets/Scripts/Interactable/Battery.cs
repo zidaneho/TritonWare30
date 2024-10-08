@@ -1,28 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.DeviceSimulation;
 using UnityEngine;
 
 public class Battery : MonoBehaviour, IInteractable
 {
-    
+    public GameObject flashLight;
+    private FlashlightComponent flashlightComponent;
     public string popupDescription => "Pickup";
-    
-    // private InputBank _input;
-    
-    void Start()
+    private void Start()
     {
-        // _input = GetComponentInParent<InputBank>();
+        // find the flashlight
+        flashLight = GameObject.FindGameObjectWithTag("flashLight");
+        flashlightComponent = flashLight.GetComponent<FlashlightComponent>(); 
     }
-    
+
+    // When clicked on (e or mouse click)
     public void OnInteract(GameObject interactor)
     {
-        // When clicked on (e or mouse click), make it disappear, and restore flashlight
+
+        // restore flashlight (do not go over max)
+        flashlightComponent.increaseBattery(5);  // will not go over max
+        Debug.Log("Battery increased to: " + flashlightComponent.getBattery());
         
-        
-        // if (_input.wasBatteryPressedThisFrame)
-        // {
-        //     Debug.Log("Battery pressed");
-        // }
+        // make it disappear
+        Destroy(gameObject);
     }
 
 }

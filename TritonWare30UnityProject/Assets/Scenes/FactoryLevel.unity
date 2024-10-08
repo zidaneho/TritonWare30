@@ -660,7 +660,7 @@ Transform:
   m_GameObject: {fileID: 777225735}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.34, y: 2.65, z: 0}
+  m_LocalPosition: {x: 4.46, y: 3.25, z: 0}
   m_LocalScale: {x: 2.0192492, y: 1.0634282, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -775,6 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3bedc300841843d4ab129ee41cb4445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flashLight: {fileID: 0}
 --- !u!1 &847510869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,6 +1810,10 @@ PrefabInstance:
     - target: {fileID: 1220692964778771290, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122578990620493848, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
+      propertyPath: m_TagString
+      value: flashLight
       objectReference: {fileID: 0}
     - target: {fileID: 5049940676760675177, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
       propertyPath: m_Name

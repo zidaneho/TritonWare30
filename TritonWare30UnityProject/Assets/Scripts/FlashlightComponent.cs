@@ -17,12 +17,15 @@ public class FlashlightComponent : MonoBehaviour
     {
         _light = GetComponent<Light2D>();
         _input = GetComponentInParent<InputBank>();
-        _battery = 10;
+        _battery = 15;
         _isTurnedOn = true;
     }
 
     private void Update()
     {
+        // for debug purposes
+        // float prevBattery = _battery;
+        
         // turn flashlight
         if (_input.moveVector != Vector2.zero)
         {
@@ -44,12 +47,26 @@ public class FlashlightComponent : MonoBehaviour
         {
             _isTurnedOn = !_isTurnedOn;
         }
-
-        Debug.Log("Battery: " + _battery);
+        
+        // for debug purposes
+        // if (Math.Floor(_battery) != Math.Floor(prevBattery) || _battery == 0) Debug.Log("Battery: " + Math.Ceiling(_battery));
     }
-
+    
+    
+    // Toggle light on and off
     public void Toggle(bool value)
     {
         _light.enabled = value;
+    }
+    
+    // Getter and setter for _battery variable
+    public void increaseBattery(float inc)
+    {
+        _battery = Math.Max(0, Math.Min(_battery+inc, 15));
+    }
+
+    public int getBattery()
+    {
+        return (int) Math.Floor(_battery);
     }
 }
