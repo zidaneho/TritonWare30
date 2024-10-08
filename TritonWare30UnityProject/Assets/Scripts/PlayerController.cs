@@ -3,12 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterController : MonoBehaviour
-{
-    [SerializeField] private Transform waypoints;
-    
-    
-}
 
 public class PlayerController : MonoBehaviour
 {
