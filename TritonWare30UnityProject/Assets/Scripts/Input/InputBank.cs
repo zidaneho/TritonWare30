@@ -46,9 +46,26 @@ public class InputBank : MonoBehaviour
     {
         
     }
+    
 
     void OnRun(InputAction.CallbackContext context)
     {
         if (context.canceled) RunCanceled?.Invoke();
+    }
+
+    public void ToggleMoveInput(bool value)
+    {
+        if (value)
+        {
+            _inputActions.Gameplay.Move.performed += OnMove;
+            _inputActions.Gameplay.Move.canceled += OnMove;
+        }
+        else
+        {
+            _inputActions.Gameplay.Move.performed -= OnMove;
+            _inputActions.Gameplay.Move.canceled -= OnMove;
+
+            moveVector = Vector2.zero;
+        }
     }
 }
