@@ -1,22 +1,34 @@
 using System;
+using Pathfinding;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour
 {
     protected Animator _animator;
-    protected NavMeshAgent agent;
+    protected IAstarAI ai;
 
-    public Transform[] waypoints;
+    public string waypointManagerName = "Monster1";
+    protected WaypointManager waypointManager;
+    public int currentWaypoint;
     public float distanceToPlayer => Vector2.Distance(player.transform.position, transform.position);
 
-    public PlayerController player;
+    protected PlayerController player;
 
     protected virtual void Awake()
     {
+        var waypointManagers = FindObjectsByType<WaypointManager>(FindObjectsSortMode.None);
+        foreach (var waypointM in waypointManagers)
+        {
+            if (waypointM.managerName == waypointManagerName)
+            {
+                waypointManager = waypointM;
+                break;
+            }
+        }
         _animator = GetComponentInChildren<Animator>();
         player = FindObjectOfType<PlayerController>();
-        agent = GetComponent<NavMeshAgent>();
+        ai = GetComponent<IAstarAI>();
     }
 
    

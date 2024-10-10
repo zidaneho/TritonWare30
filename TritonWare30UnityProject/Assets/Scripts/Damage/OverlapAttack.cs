@@ -7,11 +7,18 @@ public class OverlapAttack
     public float damage;
     public HitboxGroup hitboxGroup;
 
-    private HashSet<HurtBox> hitHurtboxes;
+    private HashSet<HurtBox> hitHurtboxes = new HashSet<HurtBox>();
     //finds all hurtboxes within the given hitbox. Damages only unique hurtboxes.
     //should be constantly updated frame by frame.
-    public void Fire()
+    //returns true if an enemy is hit
+    public bool Fire()
     {
+        bool hitEnemy = false;
+        if (hitboxGroup == null)
+        {
+            Debug.LogError("Remember to reference a hitbox group to the attack!");
+            return false;
+        }
         foreach (var hitbox in hitboxGroup.hitboxes)
         {
             Collider2D[] colliders = Physics2D.OverlapBoxAll(
@@ -26,11 +33,14 @@ public class OverlapAttack
                     var attackerTeam = attacker.GetComponent<TeamComponent>();
                     if (attackerTeam != null && hurtbox.teamComponent.teamIndex != attackerTeam.teamIndex)
                     {
+                        hitEnemy = true;
                         hitHurtboxes.Add(hurtbox);
                         hurtbox.healthComponent.TakeDamage(damage);
                     }
                 }
             }
         }
+
+        return hitEnemy;
     }
 }

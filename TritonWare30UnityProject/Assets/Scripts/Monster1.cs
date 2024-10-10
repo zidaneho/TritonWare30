@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,44 +7,151 @@ using UnityEngine;
 //During its rush state, Monster 1 will path toward the player. Once reaching its destination, it will choose a random waypoint and start running there.
 public class Monster1 : MonsterController
 {
-    public enum MonsterState { PATROL, WINDUP, RUSH }
+    public enum MonsterState { PATROL, WINDUP, CHASE, COOLDOWN }
 
     public MonsterState monsterState;
-    
-    [SerializeField] private float timeBetweenRush = 30f;
-    [SerializeField] private float windupTime = 5f;
-    [SerializeField] private float rushSpeed = 20f;
+
+    [SerializeField] private LayerMask raycastLayer;
+    [SerializeField] private Transform target;
+    [SerializeField] private float windupTime;
+    [SerializeField] private float chaseTime = 50f;
+    [SerializeField] private float lostTime = 3f;
+    [SerializeField] private float chaseRadius = 25f;
+    [SerializeField] private float cooldownTime = 5f;
 
     private float timer;
-    
+    private float lostTimer;
+    private OverlapAttack attack;
+
+    private void OnEnable()
+    {
+        ai.onSearchPath += OnSearchPath;
+    }
+
+    private void OnDisable()
+    {
+        ai.onSearchPath -= OnSearchPath;
+    }
+
+    private void Start()
+    {
+
+        target = waypointManager.waypoints[0];
+    }
+
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > timeBetweenRush)
+        if (monsterState == MonsterState.PATROL)
         {
-            timer = 0f;
-            WindupRush();
-        }
-    }
+            target = waypointManager.waypoints[currentWaypoint];
+            if (ai.reachedDestination)
+            {
+                SetNextWaypoint();
+            }
 
-    void WindupRush()
-    {
-        StartCoroutine(WindupCoroutine());
+            if (Vector2.Distance(player.transform.position, transform.position) < chaseRadius)
+            {
+                RaycastHit2D hitInfo =
+                    Physics2D.Raycast(transform.position, player.transform.position - transform.position,chaseRadius,raycastLayer);
+                if (hitInfo.collider.CompareTag("Player"))
+                {
+                    monsterState = MonsterState.WINDUP;
+                    StartCoroutine(WindupCoroutine());
+                }
+            }
+            
+        }
+        else if (monsterState == MonsterState.CHASE)
+        {
+            timer += Time.deltaTime;
+            
+            
+            if (player.isHiding && ai.reachedDestination)
+            {
+                lostTimer += Time.deltaTime;
+                if (lostTimer >= lostTime)
+                {
+                    monsterState = MonsterState.PATROL;
+                    SetClosestWaypoint();
+                }
+            }
+            else if (Vector2.Distance(player.transform.position, transform.position) < chaseRadius)
+            {
+                target = player.transform;
+                lostTimer = 0f;
+                
+                if (timer >= chaseTime || attack.Fire())
+                {
+                    monsterState = MonsterState.COOLDOWN;
+                    StartCoroutine(CooldownCoroutine());
+                }
+            }
+            
+            
+        }
+        
+        OnSearchPath();
     }
 
     IEnumerator WindupCoroutine()
     {
-        monsterState = MonsterState.WINDUP;
+        ai.canMove = false;
         yield return new WaitForSeconds(windupTime);
+        ai.canMove = true;
         //Play light events and starting sounds here.
-        Rush();
+        attack = new OverlapAttack();
+        attack.attacker = gameObject;
+        attack.damage = 100;
+        attack.hitboxGroup = GetComponent<HitboxGroup>();
+        monsterState = MonsterState.CHASE;
+
+        timer = 0f;
+        lostTimer = 0f;
+    }
+
+    IEnumerator CooldownCoroutine()
+    {
+        ai.canMove = false;
+        yield return new WaitForSeconds(cooldownTime);
+        ai.canMove = true;
+        monsterState = MonsterState.PATROL;
+    }
+
+    void SetNextWaypoint()
+    {
+        currentWaypoint++;
+        if (currentWaypoint >= waypointManager.waypoints.Length || currentWaypoint < 0)
+        {
+            currentWaypoint = 0;
+        }
+
+        target = waypointManager.waypoints[currentWaypoint];
+    }
+
+    void SetClosestWaypoint()
+    {
+        var shortest = float.MaxValue;
+        for (int i = 0; i< waypointManager.waypoints.Length; i++)
+        {
+            var dist = Vector2.Distance(transform.position, waypointManager.waypoints[i].position);
+            if (dist < shortest)
+            {
+                currentWaypoint = i;
+            }
+        }
+        
     }
     
-    
 
-    void Rush()
+    void OnSearchPath()
     {
-        monsterState = MonsterState.RUSH;
+        if (target != null) ai.destination = target.position;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(transform.position, chaseRadius);
     }
 }
