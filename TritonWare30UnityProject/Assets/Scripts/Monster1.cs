@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Pathfinding;
 using UnityEngine;
 
 
@@ -13,14 +14,16 @@ public class Monster1 : MonsterController
 
     [SerializeField] private LayerMask raycastLayer;
     [SerializeField] private Transform target;
+    [SerializeField] private float monsterSpeed = 4f;
     [SerializeField] private float windupTime;
     [SerializeField] private float chaseTime = 50f;
     [SerializeField] private float lostTime = 3f;
     [SerializeField] private float chaseRadius = 25f;
     [SerializeField] private float cooldownTime = 5f;
-
+    
+    [Header("Runtime")]
     private float timer;
-    private float lostTimer;
+    [SerializeField] private float lostTimer;
     private OverlapAttack attack;
 
     private void OnEnable()
@@ -33,10 +36,16 @@ public class Monster1 : MonsterController
         ai.onSearchPath -= OnSearchPath;
     }
 
+    private void OnValidate()
+    {
+        ai = GetComponent<IAstarAI>();
+        if (ai != null) ai.maxSpeed = monsterSpeed;
+    }
+
     private void Start()
     {
-
         target = waypointManager.waypoints[0];
+        ai.maxSpeed = monsterSpeed;
     }
 
 
@@ -50,7 +59,7 @@ public class Monster1 : MonsterController
                 SetNextWaypoint();
             }
 
-            if (Vector2.Distance(player.transform.position, transform.position) < chaseRadius)
+            if (!player.isHiding && Vector2.Distance(player.transform.position, transform.position) < chaseRadius)
             {
                 RaycastHit2D hitInfo =
                     Physics2D.Raycast(transform.position, player.transform.position - transform.position,chaseRadius,raycastLayer);
@@ -76,7 +85,7 @@ public class Monster1 : MonsterController
                     SetClosestWaypoint();
                 }
             }
-            else if (Vector2.Distance(player.transform.position, transform.position) < chaseRadius)
+            else if (!player.isHiding && Vector2.Distance(player.transform.position, transform.position) < chaseRadius)
             {
                 target = player.transform;
                 lostTimer = 0f;

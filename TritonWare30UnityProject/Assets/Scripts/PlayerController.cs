@@ -50,6 +50,11 @@ public class PlayerController : MonoBehaviour
         _rigidbody.MovePosition(newPos);
     }
 
+    public void Hide(GameObject hidingSpot, float maximumHidingTime, Vector2 facingDirection)
+    {
+        
+    }
+
     public int GetStamina()
     {
         return (int) stamina;
