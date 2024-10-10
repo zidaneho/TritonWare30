@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class InputBank : MonoBehaviour
 {
+    public event Action RunCanceled;
     [field:SerializeField]public Vector2 moveVector {get; private set;}
     public bool isInteractPressed => _inputActions.Gameplay.Interact.IsPressed();
     public bool wasInteractPressedThisFrame => _inputActions.Gameplay.Interact.WasPressedThisFrame();
@@ -23,6 +24,7 @@ public class InputBank : MonoBehaviour
         _inputActions.Gameplay.Move.performed += OnMove;
         _inputActions.Gameplay.Move.canceled += OnMove;
         _inputActions.Gameplay.Interact.started += OnInteract;
+        _inputActions.Gameplay.Run.canceled += OnRun;
     }
 
     void OnDisable()
@@ -30,6 +32,7 @@ public class InputBank : MonoBehaviour
         _inputActions.Gameplay.Move.performed -= OnMove;
         _inputActions.Gameplay.Move.canceled -= OnMove;
         _inputActions.Gameplay.Interact.started -= OnInteract;
+        _inputActions.Gameplay.Run.canceled += OnRun;
         
         _inputActions.Disable();
     }
@@ -42,5 +45,10 @@ public class InputBank : MonoBehaviour
     void OnInteract(InputAction.CallbackContext context)
     {
         
+    }
+
+    void OnRun(InputAction.CallbackContext context)
+    {
+        if (context.canceled) RunCanceled?.Invoke();
     }
 }

@@ -11,14 +11,14 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
-    
-    [SerializeField] private float stamina = 5; // max: 10, for now
-    
-    private float _currentSpeed;
+    [SerializeField] private float stamina; // max: 5, for now
+    [SerializeField] private float restTime;
+    [SerializeField] private const float MAX_STAMINA = 5;
+
     
     private Rigidbody2D _rigidbody;
     private InputBank _input;
-    private bool _isRunning;
+    private float _currentSpeed;
 
     private void Awake()
     {
@@ -28,17 +28,19 @@ public class PlayerController : MonoBehaviour
         _currentSpeed = walkSpeed;
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        stamina = 10;
+        _input.RunCanceled += OnRunCanceled;
+    }
+
+    private void OnDisable()
+    {
+        _input.RunCanceled -= OnRunCanceled;
     }
     
     private void Update()
     {
-        // for debug purposes
-        
         UpdateStamina();
-        
     }
 
     private void FixedUpdate()
@@ -55,33 +57,33 @@ public class PlayerController : MonoBehaviour
 
     void UpdateStamina()
     {
+        // if stamina is 0, you need to rest
+        if (stamina <= 0)
+        {
+            restTime = 5f;
+            stamina = 0.01f;
+        }
         // change from walk/run
-        if (_input.isRunPressed && stamina > 0)
+        if (_input.isRunPressed && stamina > 0 && restTime <= 0)
         {
             _currentSpeed = runSpeed;
-            _isRunning = true;
+            // _isRunning = true;
+            // if the character is running, consume stamina
+            stamina = Math.Max(stamina - Time.deltaTime, 0);
         }
+        // restore stamina back to max if not running, after rest
         else
         {
             _currentSpeed = walkSpeed;
-            _isRunning = false;
+            // _isRunning = false;
+            if (restTime >= 0) restTime -= Time.deltaTime;
+            stamina = Math.Min(stamina + (Time.deltaTime/1.5f), MAX_STAMINA);
         }
-        
-        // if the character is running, consume stamina
-        if (_isRunning)
-        {
-            stamina = Math.Max(stamina - Time.deltaTime, 0);
-            // stop running if character runs out of stamina
-            if (stamina == 0)
-            {
-                _isRunning = false;
-            }
-        }
-        // restore stamina back to max if not running
-        else
-        {
-            stamina = Math.Min(stamina + (Time.deltaTime)/2, 10);
-        }
+    }
+
+    void OnRunCanceled()
+    {
+        if (restTime <= 0) restTime = Math.Max(2f, restTime);
     }
     
 }
