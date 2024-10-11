@@ -45,4 +45,13 @@ public class HidingSpot : MonoBehaviour, IInteractable
             }
         }
     }
+
+    void UnhidePlayer(PlayerController player, InputBank input, Rigidbody rb)
+    {
+        player.isHiding = false;
+        input.ToggleMoveInput(true);
+        player.transform.position = exitSpotTransform.position;
+        rb.isKinematic = false;
+        _collider2D.isTrigger = false;
+    }
 }

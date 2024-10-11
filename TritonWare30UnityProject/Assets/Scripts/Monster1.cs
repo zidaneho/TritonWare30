@@ -76,7 +76,7 @@ public class Monster1 : MonsterController
             timer += Time.deltaTime;
             
             
-            if (player.isHiding && ai.reachedDestination)
+            if (player.isHiding)
             {
                 lostTimer += Time.deltaTime;
                 if (lostTimer >= lostTime)
@@ -95,6 +95,11 @@ public class Monster1 : MonsterController
                     monsterState = MonsterState.COOLDOWN;
                     StartCoroutine(CooldownCoroutine());
                 }
+            }
+            else
+            {
+                monsterState = MonsterState.PATROL;
+                SetClosestWaypoint();
             }
             
             

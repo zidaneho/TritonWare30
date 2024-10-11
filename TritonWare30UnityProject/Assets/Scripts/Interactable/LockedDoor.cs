@@ -6,11 +6,13 @@ using UnityEngine;
 public class LockedDoor : MonoBehaviour, IInteractable
 {
     [SerializeField] private int keyRequirement = 1;
+    [SerializeField] private Collider2D[] openedDoorCollider;
     
     public string popupDescription => "Open";
     
     private Animator _animator;
     private BoxCollider2D _collider;
+    
 
     private bool opened;
 
@@ -28,6 +30,7 @@ public class LockedDoor : MonoBehaviour, IInteractable
             opened = true;
             _collider.enabled = false;
             keyComponent.RemoveKeys(keyRequirement);
+            _animator.Play("OpenDoor");
         }
     }
 }
