@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f2eca375ae9f4dac84c2836b960895f, type: 3}
+  m_Name: DrawerLootTable
+  m_EditorClassIdentifier: 
+  items:
+  - item: {fileID: 11400000, guid: b6851c9590ed14e0fb158e3f484c2a51, type: 2}
+    amount: 0
+    weight: 25
+  - item: {fileID: 11400000, guid: 477f71e8b31b94d7aacaca47e621af81, type: 2}
+    amount: 0
+    weight: 29

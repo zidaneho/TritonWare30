@@ -15,13 +15,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float restTime;
     [SerializeField] private const float MAX_STAMINA = 5;
 
-    
+    public HealthComponent healthComponent;
     private Rigidbody2D _rigidbody;
     private InputBank _input;
     private float _currentSpeed;
 
     private void Awake()
     {
+        healthComponent = GetComponent<HealthComponent>();
         _input = GetComponent<InputBank>();
         _rigidbody = GetComponent<Rigidbody2D>();
         

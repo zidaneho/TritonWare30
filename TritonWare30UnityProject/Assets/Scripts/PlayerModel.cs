@@ -22,7 +22,6 @@ public class PlayerModel : MonoBehaviour
     {
         if (_input.moveVector.x != 0) _spriteRenderer.flipX = _input.moveVector.x < 0;
         _animator.SetBool("isMoving", _input.moveVector.sqrMagnitude > 0.1f);
-        
         _animator.SetFloat("moveX", _input.moveVector.x);
         _animator.SetFloat("moveY", _input.moveVector.y);
     }

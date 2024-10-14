@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 817ba90717d7424898a2feb2786114a5, type: 3}
-  m_Name: Key
+  m_Name: Null
   m_EditorClassIdentifier: 
-  itemName: Key
-  description: A piece of the exit
-  icon: {fileID: 21300000, guid: 70d89eac0d8ae482c88809fc1a0bd8c9, type: 3}
+  itemName: Null
+  description: Nothing.
+  icon: {fileID: 0}
   worldPrefab: {fileID: 0}

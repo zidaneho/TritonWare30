@@ -9,6 +9,10 @@ using UnityEngine;
 public class Monster1 : MonsterController
 {
     public enum MonsterState { PATROL, WINDUP, CHASE, COOLDOWN }
+    
+    public string waypointManagerName = "Monster1";
+    protected WaypointManager waypointManager;
+    public int currentWaypoint;
 
     public MonsterState monsterState;
 
@@ -25,6 +29,20 @@ public class Monster1 : MonsterController
     private float timer;
     [SerializeField] private float lostTimer;
     private OverlapAttack attack;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        var waypointManagers = FindObjectsByType<WaypointManager>(FindObjectsSortMode.None);
+        foreach (var waypointM in waypointManagers)
+        {
+            if (waypointM.managerName == waypointManagerName)
+            {
+                waypointManager = waypointM;
+                break;
+            }
+        }
+    }
 
     private void OnEnable()
     {

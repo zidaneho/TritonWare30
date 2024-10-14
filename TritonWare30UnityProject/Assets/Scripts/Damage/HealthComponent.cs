@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
+    public bool alive = true;
     public float health = 100f;
 
     public void TakeDamage(float damage)
@@ -18,6 +19,6 @@ public class HealthComponent : MonoBehaviour
 
     void Die()
     {
-        
+        alive = false;
     }
 }
