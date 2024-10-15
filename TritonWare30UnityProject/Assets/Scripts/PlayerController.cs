@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-
 public class PlayerController : MonoBehaviour
 {
+    
     public bool isHiding;
     
     [SerializeField] private float walkSpeed;
