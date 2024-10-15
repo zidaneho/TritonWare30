@@ -135,8 +135,10 @@ public class Monster1 : MonsterController
         attack = new OverlapAttack();
         attack.attacker = gameObject;
         attack.damage = 100;
+        attack.attackerTeam = teamComponent.teamIndex;
         attack.hitboxGroup = GetComponent<HitboxGroup>();
         monsterState = MonsterState.CHASE;
+        
 
         timer = 0f;
         lostTimer = 0f;

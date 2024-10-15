@@ -4,6 +4,7 @@ using UnityEngine;
 public class OverlapAttack
 {
     public GameObject attacker;
+    public TeamComponent.TeamIndex attackerTeam;
     public float damage;
     public HitboxGroup hitboxGroup;
 
@@ -30,8 +31,7 @@ public class OverlapAttack
                 var hurtbox = collider.GetComponent<HurtBox>();
                 if (hurtbox != null && !hitHurtboxes.Contains(hurtbox))
                 {
-                    var attackerTeam = attacker.GetComponent<TeamComponent>();
-                    if (attackerTeam != null && hurtbox.teamComponent.teamIndex != attackerTeam.teamIndex)
+                    if (hurtbox.teamComponent.teamIndex != attackerTeam)
                     {
                         hitEnemy = true;
                         hitHurtboxes.Add(hurtbox);
