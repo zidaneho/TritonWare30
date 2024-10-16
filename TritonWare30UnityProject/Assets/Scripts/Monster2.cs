@@ -60,7 +60,7 @@ public class Monster2 : MonsterController
             }
             else
             {
-                if (!player.isHiding) Debug.Log(_attack.Fire());
+                if (!player.isHiding) _attack.Fire();
             }
         }
         OnSearchPath();
