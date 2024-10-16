@@ -14,6 +14,7 @@ public class Monster2 : MonsterController
     public MonsterState monsterState = MonsterState.WINDUP;
     [SerializeField] private float windupTime = 5f;
     [SerializeField] private float extraRushDistance = 50f;
+    [SerializeField] private float maxDistanceToHidingPlayer = 3f;
     
     private Vector3 _targetPosition;
     private OverlapAttack _attack;
@@ -47,21 +48,19 @@ public class Monster2 : MonsterController
     {
         if (monsterState == MonsterState.RUSH)
         {
-            if (!_reachedPlayer && ai.reachedDestination)
-            {
-                _reachedPlayer = true;
-                _rushDirection = (player.transform.position - transform.position).normalized;
-                _targetPosition = _rushDirection * extraRushDistance;
-            }
-            else if (_reachedPlayer && ai.reachedDestination)
+            if (_reachedPlayer && ai.reachedDestination)
             {
                 monsterState = MonsterState.END;
                 Destroy(gameObject);
             }
+            else if (!_reachedPlayer && ai.reachedDestination || player.isHiding && ai.remainingDistance < maxDistanceToHidingPlayer)
+            {
+                _reachedPlayer = true;
+                _targetPosition = transform.position + _rushDirection * extraRushDistance;
+            }
             else
             {
                 if (!player.isHiding) Debug.Log(_attack.Fire());
-                if (!_reachedPlayer) _targetPosition = player.transform.position;
             }
         }
         OnSearchPath();
@@ -71,6 +70,8 @@ public class Monster2 : MonsterController
     {
         ai.canMove = false;
         yield return new WaitForSeconds(windupTime);
+
+        _rushDirection = (player.transform.position - transform.position).normalized;
 
         _targetPosition = player.transform.position;
 
