@@ -10,14 +10,17 @@ public class FlashlightComponent : MonoBehaviour
 
     private Light2D _light;
     private InputBank _input;
-    [SerializeField] private float _battery;
-    private bool _isTurnedOn; 
+    
+    [SerializeField] private float batteryDrainFactor = 1;
+    
+    [Header("Runtime")]
+    [SerializeField] private float _battery = 15;
+    [SerializeField] private bool _isTurnedOn; 
 
     private void Awake()
     {
         _light = GetComponent<Light2D>();
         _input = GetComponentInParent<InputBank>();
-        _battery = 15;
         _isTurnedOn = true;
     }
 
@@ -38,7 +41,7 @@ public class FlashlightComponent : MonoBehaviour
         // batteries run out if on
         if (_isTurnedOn)
         {
-            _battery = Math.Max(_battery - Time.deltaTime, 0);
+            _battery = Math.Max(_battery - batteryDrainFactor * Time.deltaTime, 0);
         }
         _light.enabled = _battery > 0 && _isTurnedOn;            
         
