@@ -22,7 +22,6 @@ public class Interactor : MonoBehaviour
         if (_input.wasInteractPressedThisFrame)
         {
             var interactable = GetClosestObject();
-            Debug.Log(interactable);
             interactable?.OnInteract(this.gameObject);
         }
     }
