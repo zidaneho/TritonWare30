@@ -6,17 +6,22 @@ using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
-    
+    [Header("UI")] 
+    [SerializeField] private ProgressBar staminaBar;
+    [SerializeField] private FadeUI staminaFade;
+    [SerializeField] private float staminaFadeTolerance;
+    [Header("Settings")]
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
     [SerializeField] private float stamina; // max: 5, for now
+    [SerializeField] private float staminaGainFactor = 0.7f;
     [SerializeField] private float staminaDrainFactor = 1;
     [SerializeField] private float cancelRunRestTime = 2f;
     [SerializeField] private float outOfStaminaRestTime = 5f;
-   
     [SerializeField] private float maxStamina = 5;
+    
     [Header("Runtime")]
-    [SerializeField] private float _restTime;
+    [SerializeField] private float restTime;
     [SerializeField] private bool isHiding;
     private Coroutine _hideCoroutine;
     private SpriteRenderer _spriteRenderer;
@@ -62,14 +67,16 @@ public class PlayerController : MonoBehaviour
 
     void UpdateStamina()
     {
+        var oldStamina = stamina;
+        
         // if stamina is 0, you need to rest
         if (stamina <= 0)
         {
-            _restTime = outOfStaminaRestTime;
+            restTime = outOfStaminaRestTime;
             stamina = 0.01f;
         }
         // change from walk/run
-        if (_input.isRunPressed && stamina > 0 && _restTime <= 0)
+        if (_input.isRunPressed && stamina > 0 && restTime <= 0)
         {
             _currentSpeed = runSpeed;
             // _isRunning = true;
@@ -81,14 +88,25 @@ public class PlayerController : MonoBehaviour
         {
             _currentSpeed = walkSpeed;
             // _isRunning = false;
-            if (_restTime >= 0) _restTime -= Time.deltaTime;
-            stamina = Math.Min(stamina + (Time.deltaTime/1.5f), maxStamina);
+            if (restTime >= 0) restTime -= Time.deltaTime;
+            stamina = Math.Min(stamina + staminaGainFactor * Time.deltaTime, maxStamina);
         }
+        
+        //Updating UI here
+        if (Math.Abs(oldStamina - stamina) > staminaFadeTolerance)
+        {
+            staminaFade.TryFadeIn();
+        }
+        else
+        {
+            staminaFade.TryFadeOut();
+        }
+        staminaBar.SetProgress(stamina, maxStamina);
     }
 
     void OnRunCanceled()
     {
-        if (_restTime <= 0) _restTime = Math.Max(cancelRunRestTime, _restTime);
+        if (restTime <= 0) restTime = Math.Max(cancelRunRestTime, restTime);
     }
     
     public void Hide(GameObject hidingSpot, float maximumHidingTime, bool hideSprite = false)

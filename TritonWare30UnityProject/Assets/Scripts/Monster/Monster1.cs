@@ -8,7 +8,7 @@ using UnityEngine;
 //During its rush state, Monster 1 will path toward the player. Once reaching its destination, it will choose a random waypoint and start running there.
 public class Monster1 : MonsterController
 {
-    public enum MonsterState { PATROL, WINDUP, CHASE, COOLDOWN }
+    public enum MonsterState { PATROL, CHASE, COOLDOWN }
     
     public string waypointManagerName = "Monster1";
     protected WaypointManager waypointManager;
@@ -19,7 +19,6 @@ public class Monster1 : MonsterController
     [SerializeField] private LayerMask raycastLayer;
     [SerializeField] private Transform target;
     [SerializeField] private float monsterSpeed = 4f;
-    [SerializeField] private float windupTime;
     [SerializeField] private float chaseTime = 50f;
     [SerializeField] private float lostTime = 3f;
     [SerializeField] private float chaseRadius = 25f;
@@ -83,8 +82,7 @@ public class Monster1 : MonsterController
                     Physics2D.Raycast(transform.position, player.transform.position - transform.position,chaseRadius,raycastLayer);
                 if (hitInfo.collider.CompareTag("Player"))
                 {
-                    monsterState = MonsterState.WINDUP;
-                    StartCoroutine(WindupCoroutine());
+                    Windup();
                 }
             }
             
@@ -126,10 +124,9 @@ public class Monster1 : MonsterController
         OnSearchPath();
     }
 
-    IEnumerator WindupCoroutine()
+    void Windup()
     {
         ai.canMove = false;
-        yield return new WaitForSeconds(windupTime);
         ai.canMove = true;
         //Play light events and starting sounds here.
         attack = new OverlapAttack();
