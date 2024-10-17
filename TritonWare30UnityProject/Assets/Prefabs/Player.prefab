@@ -186,7 +186,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  batteryDrainFactor: 1
   _battery: 0
+  _isTurnedOn: 0
+--- !u!1 &4705985308563967419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 724933760638573091}
+  - component: {fileID: 2404666163087545063}
+  m_Layer: 8
+  m_Name: runParticleHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &724933760638573091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4705985308563967419}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.52, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1220692964778771290}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &2404666163087545063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4705985308563967419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a085a99c10404e1bb047fa773a1c0dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 3097759864638108611, guid: c7700c3776d1f4b029b66127fd9d9147, type: 3}
+  timeBetweenBurst: 0.3
+  maxPoolSize: 10
 --- !u!1 &5049940676760675177
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +278,7 @@ Transform:
   - {fileID: 9137950946040760312}
   - {fileID: 5353396988292269614}
   - {fileID: 6003150977383729114}
+  - {fileID: 724933760638573091}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5832827340760459788
@@ -324,8 +374,11 @@ MonoBehaviour:
   walkSpeed: 4
   runSpeed: 10
   stamina: 5
-  restTime: 0
-  healthComponent: {fileID: 0}
+  staminaDrainFactor: 0
+  cancelRunRestTime: 0.5
+  outOfStaminaRestTime: 5
+  maxStamina: 5
+  _restTime: 0
 --- !u!114 &3422571505152498872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,7 +566,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1637018251
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 1455128531, guid: c2bf12be1aed04af7b264ecac8d55666, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -524,7 +577,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!95 &2269075860258268490
 Animator:

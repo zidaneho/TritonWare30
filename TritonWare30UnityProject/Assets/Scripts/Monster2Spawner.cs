@@ -23,13 +23,14 @@ public class Monster2Spawner : MonoBehaviour
         if (timer >= timeBetweenSpawns)
         {
             timer = 0f;
-            currentMonsterInstance = Instantiate(monster, GetRandomWaypoint(), Quaternion.identity);
+            if (monster != null) currentMonsterInstance = Instantiate(monster, GetRandomWaypoint(), Quaternion.identity);
             
         }
     }
 
     Vector2 GetRandomWaypoint()
     {
+        if (startWaypoints.Length <= 0) return Vector2.zero;
         var randomIndex = Random.Range(0, startWaypoints.Length);
         return startWaypoints[randomIndex].position;
     }
