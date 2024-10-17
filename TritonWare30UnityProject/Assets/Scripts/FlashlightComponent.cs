@@ -54,7 +54,26 @@ public class FlashlightComponent : MonoBehaviour
         // for debug purposes
         // if (Math.Floor(_battery) != Math.Floor(prevBattery) || _battery == 0) Debug.Log("Battery: " + Math.Ceiling(_battery));
     }
-    
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        var litComponent = collision.gameObject.GetComponent<LitComponent>();
+
+        if (litComponent != null)
+        {
+            litComponent.litObjects++;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        var litComponent = collision.gameObject.GetComponent<LitComponent>();
+
+        if (litComponent != null)
+        {
+            litComponent.litObjects--;
+        }
+    }
     
     // Toggle light on and off
     public void Toggle(bool value)
