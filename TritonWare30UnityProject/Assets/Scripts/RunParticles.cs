@@ -38,7 +38,7 @@ public class RunParticles : MonoBehaviour
     {
             
         
-        if (_player.CurrentSpeed >= _player.RunSpeed)
+        if (_player.CurrentSpeed >= _player.RunSpeed && _input.moveVector != Vector2.zero)
         {
             _timer += Time.deltaTime;
             if (_timer > timeBetweenBurst)

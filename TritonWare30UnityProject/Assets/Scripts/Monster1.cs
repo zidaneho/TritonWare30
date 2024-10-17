@@ -77,7 +77,7 @@ public class Monster1 : MonsterController
                 SetNextWaypoint();
             }
 
-            if (!player.isHiding && Vector2.Distance(player.transform.position, transform.position) < chaseRadius)
+            if (!player.IsHiding && Vector2.Distance(player.transform.position, transform.position) < chaseRadius)
             {
                 RaycastHit2D hitInfo =
                     Physics2D.Raycast(transform.position, player.transform.position - transform.position,chaseRadius,raycastLayer);
@@ -94,7 +94,7 @@ public class Monster1 : MonsterController
             timer += Time.deltaTime;
             
             
-            if (player.isHiding)
+            if (player.IsHiding)
             {
                 lostTimer += Time.deltaTime;
                 if (lostTimer >= lostTime)
@@ -103,7 +103,7 @@ public class Monster1 : MonsterController
                     SetClosestWaypoint();
                 }
             }
-            else if (!player.isHiding && Vector2.Distance(player.transform.position, transform.position) < chaseRadius)
+            else if (!player.IsHiding && Vector2.Distance(player.transform.position, transform.position) < chaseRadius)
             {
                 target = player.transform;
                 lostTimer = 0f;

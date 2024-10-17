@@ -22,36 +22,25 @@ public class HidingSpot : MonoBehaviour, IInteractable
 
         if (player != null)
         {
-            var input = player.GetComponent<InputBank>();
             var rb = player.GetComponent<Rigidbody2D>();
-            if (player.isHiding)
+            if (player.IsHiding)
             {
-                player.isHiding = false;
-                input.ToggleMoveInput(true);
+                player.Unhide();
                 player.transform.position = exitSpotTransform.position;
                 rb.isKinematic = false;
                 _collider2D.isTrigger = false;
             }
             else
             {
+                Debug.Log("hiding");
+                player.Hide(gameObject, maximumHideTime);
                 _collider2D.isTrigger = true;
                 player.transform.position = transform.position;
-                player.isHiding = true;
                 rb.isKinematic = true;
-                input.ToggleMoveInput(false);
             
                 //Remember to play hiding animation here
                 //In theory the player should not move at all
             }
         }
-    }
-
-    void UnhidePlayer(PlayerController player, InputBank input, Rigidbody rb)
-    {
-        player.isHiding = false;
-        input.ToggleMoveInput(true);
-        player.transform.position = exitSpotTransform.position;
-        rb.isKinematic = false;
-        _collider2D.isTrigger = false;
     }
 }
