@@ -6,16 +6,21 @@ using UnityEngine.Rendering.Universal;
 
 public class FlashlightComponent : MonoBehaviour
 {
+    [Header("UI")] 
+    [SerializeField] private ProgressBar batteryBar;
+    [SerializeField] private FadeUI batteryFade;
+    [SerializeField] private float batteryFadeTolerance;
+    [Header("Settings")] 
+    [SerializeField] private float maxBattery = 15f;
     [SerializeField] private float rotationSpeed = 10f;
-
-    private Light2D _light;
-    private InputBank _input;
-    
     [SerializeField] private float batteryDrainFactor = 1;
     
     [Header("Runtime")]
     [SerializeField] private float _battery = 15;
     [SerializeField] private bool _isTurnedOn; 
+    
+    private Light2D _light;
+    private InputBank _input;
 
     private void Awake()
     {
@@ -27,7 +32,7 @@ public class FlashlightComponent : MonoBehaviour
     private void Update()
     {
         // for debug purposes
-        // float prevBattery = _battery;
+        var oldBattery = _battery;
         
         // turn flashlight
         if (_input.moveVector != Vector2.zero)
@@ -53,6 +58,17 @@ public class FlashlightComponent : MonoBehaviour
         
         // for debug purposes
         // if (Math.Floor(_battery) != Math.Floor(prevBattery) || _battery == 0) Debug.Log("Battery: " + Math.Ceiling(_battery));
+        
+        batteryBar.SetProgress(_battery, maxBattery);
+        Debug.Log(Math.Abs(_battery - oldBattery));
+        if (Math.Abs(_battery - oldBattery) > batteryFadeTolerance)
+        {
+            batteryFade.TryFadeIn();
+        }
+        else
+        {
+            batteryFade.TryFadeOut();   
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
