@@ -6,7 +6,7 @@ public class CeilingLightComponent : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("yo");
+        
         var litComponent = collision.gameObject.GetComponent<LitComponent>();
 
         if (litComponent != null)

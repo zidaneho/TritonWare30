@@ -80,7 +80,7 @@ public class Monster1 : MonsterController
             {
                 RaycastHit2D hitInfo =
                     Physics2D.Raycast(transform.position, player.transform.position - transform.position,chaseRadius,raycastLayer);
-                if (hitInfo.collider.CompareTag("Player"))
+                if (hitInfo.transform != null && hitInfo.transform.CompareTag("Player"))
                 {
                     Windup();
                 }
@@ -125,9 +125,7 @@ public class Monster1 : MonsterController
     }
 
     void Windup()
-    {
-        ai.canMove = false;
-        ai.canMove = true;
+    {       
         //Play light events and starting sounds here.
         attack = new OverlapAttack();
         attack.attacker = gameObject;
