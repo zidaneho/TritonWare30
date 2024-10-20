@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 299787590753165040}
   - component: {fileID: 4450081994216796011}
+  - component: {fileID: 4911495994520404378}
+  - component: {fileID: 7433543560657655817}
   m_Layer: 0
   m_Name: modelMonster1
   m_TagString: Untagged
@@ -73,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 1158897860, guid: 662921a3b2c15ec48bee508bd3fde9c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +86,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4911495994520404378
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094972230631672004}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 637253bb6e7df89468528efbb11dbf4c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7433543560657655817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094972230631672004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd9acd10abdd4334ea184faba525c4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5349141941309137384
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +225,7 @@ MonoBehaviour:
   monsterSpeed: 5
   chaseTime: 50
   lostTime: 3
-  chaseRadius: 7.3
+  chaseRadius: 25
   cooldownTime: 5
   lostTimer: 0
 --- !u!114 &1024741595150949692
@@ -246,7 +281,7 @@ MonoBehaviour:
   repathRateCompatibility: NaN
   canSearchCompability: 0
   orientation: 1
-  enableRotation: 1
+  enableRotation: 0
   autoRepath:
     mode: 2
     interval: 0.5
