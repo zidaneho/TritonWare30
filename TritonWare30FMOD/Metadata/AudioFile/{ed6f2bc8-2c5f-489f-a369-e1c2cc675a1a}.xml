@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ed6f2bc8-2c5f-489f-a369-e1c2cc675a1a}">
+		<property name="assetPath">
+			<value>horror_ambience.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>45.671999999999997</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{aaa603ba-f8b2-4591-b792-243860627a8c}</destination>
+		</relationship>
+	</object>
+</objects>

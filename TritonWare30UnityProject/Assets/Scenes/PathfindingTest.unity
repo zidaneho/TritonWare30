@@ -226,6 +226,26 @@ PrefabInstance:
       propertyPath: walkSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 792662258423413801, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
+      propertyPath: footStepsSoundEvent.Path
+      value: event:/footsteps-walking
+      objectReference: {fileID: 0}
+    - target: {fileID: 792662258423413801, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
+      propertyPath: footStepsSoundEvent.Guid.Data1
+      value: 973088113
+      objectReference: {fileID: 0}
+    - target: {fileID: 792662258423413801, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
+      propertyPath: footStepsSoundEvent.Guid.Data2
+      value: 1197873873
+      objectReference: {fileID: 0}
+    - target: {fileID: 792662258423413801, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
+      propertyPath: footStepsSoundEvent.Guid.Data3
+      value: 1754506908
+      objectReference: {fileID: 0}
+    - target: {fileID: 792662258423413801, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
+      propertyPath: footStepsSoundEvent.Guid.Data4
+      value: -782746125
+      objectReference: {fileID: 0}
     - target: {fileID: 1220692964778771290, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.566
