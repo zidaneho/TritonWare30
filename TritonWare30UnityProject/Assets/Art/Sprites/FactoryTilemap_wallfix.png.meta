@@ -1,0 +1,2028 @@
+fileFormatVersion: 2
+guid: 9cb1479e994f64742bf716fcaf857ad7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 340
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8b8725df8cc43a8ab2331282a15492
+      internalID: 929313011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 340
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3bac983d8484a24b54a5329cb87a08
+      internalID: 293741125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 340
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae18dcac140144199a6b8bfd30ddd6fa
+      internalID: -1709315435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 340
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144d7dbd1edba464083a571793e86541
+      internalID: 1384132533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 340
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a3a029f8e0a4884be49e5b13beeebb
+      internalID: 1488988870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 340
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3e423ac2685449da617ac450289589
+      internalID: 521501432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 340
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee8c2e191f3a4d4196bfea482c24b92
+      internalID: 1630017309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 340
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 539f70e74e036421abe3348bfc3f5f9a
+      internalID: -1220380512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 340
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517e0b86655794b25bd6590dcca9d36a
+      internalID: -2025318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 340
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b17cfd5c9d9f4b0f95b0cd0aa67acac
+      internalID: 168350552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 340
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 147d281fd496a4d83a247d309be4f014
+      internalID: 1336703742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 340
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d59f72cf9df045759290dc5d62910d2
+      internalID: -1254015723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 308
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a9c0f9ce4d334423b6fca0958869395
+      internalID: 1318251164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 308
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c8741c0c9d642e3989b0b643636aca
+      internalID: -2012769938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 308
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3437dde60d8a4845b1abf9a983cbfe9
+      internalID: 1324708029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 308
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c9aaabe05e34b4da26289f34ccb4e8
+      internalID: -20047335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 308
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b3fbdf9fdc6440682923c27536e2d6
+      internalID: 795583503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 308
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94c0f1f84bdb54bfbaafadebb34746c1
+      internalID: -291164331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_18
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 308
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b37d6684d10457088f493c4bba0a34
+      internalID: -834555099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_19
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 308
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398545151da3d4b1e8a9b6c3442c270d
+      internalID: -1924468828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 308
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27fcd68eb6acd48e0a0ea62d85e7692b
+      internalID: 2122974321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_21
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 308
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0789915b1cce84b56babe16d124131b1
+      internalID: 1318767022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_22
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 308
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 177148e7a2e4449d2aba9c3b89866437
+      internalID: -1527430803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_23
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 308
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b687ac478be477ab94ba9175b1711e
+      internalID: 1288669017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 276
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d636706065446ee8b64e0fefa5ed77
+      internalID: -1011298884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_25
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 276
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e46a693d886642018b254a0d1473c04
+      internalID: 2021228334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 244
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d4f8a2a029740f9be1aefba44819b5
+      internalID: -30539389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_27
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 244
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5775fc4d9d7c411c9e477f315b45020
+      internalID: 1099045299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 244
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2afc53360054b5c817f2d31e3cde14
+      internalID: -334855574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_29
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 244
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e67f7e2bfa8143418f2a23230ad5fb9
+      internalID: 16259653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_30
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 244
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d7c1431f3c946f9a9eb47c6b2eabf5
+      internalID: 1022472575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_31
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 244
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 154606a183e914573a6e07015122b1f2
+      internalID: -1389651889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_32
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 244
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9696d469efdc54277b0f2d6a49988abb
+      internalID: -898887508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_33
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 244
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d75bec4c228487c8dd7ec1c42cc773
+      internalID: -148329992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_34
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 244
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4c5a8aaf6544b7592b875fddc0753a
+      internalID: 1520303462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_35
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 244
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329953c9e8b114f0cbb4d4e4f51c6520
+      internalID: 1706326186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_36
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 244
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe447963fc564bb7b82434e96830632
+      internalID: 407457734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_37
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 212
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21cd0b462d96a4cbf8eb1a6084976286
+      internalID: -1913845341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_38
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 212
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc703c9dd58c4a3ebb87552bbe4a589
+      internalID: -2143584968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_39
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 212
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93e89b0f2b9a49a7baa2ba93235f269
+      internalID: -1760290919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_40
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 212
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836e24c0e2a4644a98bccce172fa2746
+      internalID: 1822914604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_41
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 212
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933dcdc660f574456b5bb3290a4c9fe6
+      internalID: -1847069859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_42
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 212
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a89809a49c84432983cbabc2c038283
+      internalID: -460794179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_43
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 212
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d3ab149dcf743d0bce8087122cf52c
+      internalID: -448644715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_44
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 212
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79fd075077ef4432ab28355f6eb2c8f1
+      internalID: -1994127624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_45
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 212
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c80b7c340aa42b1b9f80427582010b
+      internalID: 786035950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_46
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 212
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d7a524a911de47908ba8e6d99ad0375
+      internalID: 411164776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_47
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 212
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b77733a74d7bf489bb1b9e84d56bb7c3
+      internalID: 1472578073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_48
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 180
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 686d877420a334dec946e2860e320565
+      internalID: 1711141664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_49
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 180
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f556a2ce15b045608df52ae53035690
+      internalID: -1119596861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_50
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 180
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a09a6e509b84c407c8129828208f8b6d
+      internalID: -2113663275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_51
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 180
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2658dd7ddfc4c2fb038c55ecd2b822
+      internalID: 561970753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_52
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 180
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa939683d7fc24791a02de8a567add12
+      internalID: -1477044305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_53
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 180
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44c6d54fe0364be4836e83740737622
+      internalID: -99756343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_54
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 180
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529a63dcd0118464aa71281aef840532
+      internalID: -1888904160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_55
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 180
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df8ca89419d04165a9e18d55d42c046
+      internalID: -2004397176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_56
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 180
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287de51038f8446e0875249f9c8e50de
+      internalID: -1788551736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_57
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 180
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a0584af53c73457491797a28d8c67ea
+      internalID: 442456776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_58
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 180
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7538161e4b8eb471c8c2f8301f52f5a9
+      internalID: -2133289950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_59
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 180
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e87780e382c6f49c3ab8d2c0ab0272cf
+      internalID: 456873947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_60
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 148
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5ef3a2707b2744a6a8a4515a12ec372
+      internalID: 483419895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_61
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 148
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b247404d19c7d4889850cab2796b09ee
+      internalID: -2033144588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_62
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 148
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418cc86ad0ef94202b73aa89cc73c2c0
+      internalID: 1613813975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_63
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 148
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e573ceaac54ec4f79a2113d705976f00
+      internalID: 1614871535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_64
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 148
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5b9f6e9820f446c84514d3e9ec149d
+      internalID: 298193730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_65
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d6de620c9fc4d54b8ac710b8ed4945
+      internalID: -393655591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_66
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01dfc5a9d05b0472d9fa2bcddc575477
+      internalID: 286993689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_67
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f30305a9f3f945d1ae3599ce64e7d79
+      internalID: -1543333936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_68
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68abb4d503a049478fb2bbc878e3e8d
+      internalID: 861208180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_69
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be0bc3e4ff644822927547352a41e8a
+      internalID: -968328666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_70
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e870c3e8f82b940028a2428fa353f0a8
+      internalID: -1773034111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_71
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb16526719c6a4df6a748cc021835025
+      internalID: 1262741858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_72
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6f6e11e651146cbb9ce21fa44f0366
+      internalID: -829920685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_73
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79c72e5645c44f52bdf40c9905eae30
+      internalID: 653485602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_74
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24acb4809f9954f04badd2fe5b9b730f
+      internalID: -262586142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_75
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 84
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e47278117add4da8a0c43826220a74e
+      internalID: -1848314801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_76
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 84
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3d51068c75e4df6b2c9ddf8e2171da
+      internalID: 1702814694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_77
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 84
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f609b1807b740d5b9f1ea6cce6a769
+      internalID: -323393578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_78
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 84
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2865ba379dc349fab0d58cbb3609db6
+      internalID: 148523895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_79
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 84
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a6c4d638aef4617b09414df2a46e43
+      internalID: -1116857340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_80
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 84
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b981c6e3b6a854a709fab84a0ae0856e
+      internalID: 621461252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_81
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 84
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4ed0690125a45478b640550540cc1e
+      internalID: 1538981047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_82
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 84
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 278872275349648a2851c94c75ed7b1a
+      internalID: 723067370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_83
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 84
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0fa57702f044a5faa8ba3245b65ccb
+      internalID: 512664404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_84
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 84
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13161b70174e4087bc02002d0b5d00f
+      internalID: 387595229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_85
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 52
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786eafce9d4a74e428c7e05e6e80c805
+      internalID: 353182174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FactoryTilemap_wallfix_86
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 52
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947ef0e59c77e4e94b6e2e77164b446a
+      internalID: -407005831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      FactoryTilemap_wallfix_0: 929313011
+      FactoryTilemap_wallfix_1: 293741125
+      FactoryTilemap_wallfix_10: 1336703742
+      FactoryTilemap_wallfix_11: -1254015723
+      FactoryTilemap_wallfix_12: 1318251164
+      FactoryTilemap_wallfix_13: -2012769938
+      FactoryTilemap_wallfix_14: 1324708029
+      FactoryTilemap_wallfix_15: -20047335
+      FactoryTilemap_wallfix_16: 795583503
+      FactoryTilemap_wallfix_17: -291164331
+      FactoryTilemap_wallfix_18: -834555099
+      FactoryTilemap_wallfix_19: -1924468828
+      FactoryTilemap_wallfix_2: -1709315435
+      FactoryTilemap_wallfix_20: 2122974321
+      FactoryTilemap_wallfix_21: 1318767022
+      FactoryTilemap_wallfix_22: -1527430803
+      FactoryTilemap_wallfix_23: 1288669017
+      FactoryTilemap_wallfix_24: -1011298884
+      FactoryTilemap_wallfix_25: 2021228334
+      FactoryTilemap_wallfix_26: -30539389
+      FactoryTilemap_wallfix_27: 1099045299
+      FactoryTilemap_wallfix_28: -334855574
+      FactoryTilemap_wallfix_29: 16259653
+      FactoryTilemap_wallfix_3: 1384132533
+      FactoryTilemap_wallfix_30: 1022472575
+      FactoryTilemap_wallfix_31: -1389651889
+      FactoryTilemap_wallfix_32: -898887508
+      FactoryTilemap_wallfix_33: -148329992
+      FactoryTilemap_wallfix_34: 1520303462
+      FactoryTilemap_wallfix_35: 1706326186
+      FactoryTilemap_wallfix_36: 407457734
+      FactoryTilemap_wallfix_37: -1913845341
+      FactoryTilemap_wallfix_38: -2143584968
+      FactoryTilemap_wallfix_39: -1760290919
+      FactoryTilemap_wallfix_4: 1488988870
+      FactoryTilemap_wallfix_40: 1822914604
+      FactoryTilemap_wallfix_41: -1847069859
+      FactoryTilemap_wallfix_42: -460794179
+      FactoryTilemap_wallfix_43: -448644715
+      FactoryTilemap_wallfix_44: -1994127624
+      FactoryTilemap_wallfix_45: 786035950
+      FactoryTilemap_wallfix_46: 411164776
+      FactoryTilemap_wallfix_47: 1472578073
+      FactoryTilemap_wallfix_48: 1711141664
+      FactoryTilemap_wallfix_49: -1119596861
+      FactoryTilemap_wallfix_5: 521501432
+      FactoryTilemap_wallfix_50: -2113663275
+      FactoryTilemap_wallfix_51: 561970753
+      FactoryTilemap_wallfix_52: -1477044305
+      FactoryTilemap_wallfix_53: -99756343
+      FactoryTilemap_wallfix_54: -1888904160
+      FactoryTilemap_wallfix_55: -2004397176
+      FactoryTilemap_wallfix_56: -1788551736
+      FactoryTilemap_wallfix_57: 442456776
+      FactoryTilemap_wallfix_58: -2133289950
+      FactoryTilemap_wallfix_59: 456873947
+      FactoryTilemap_wallfix_6: 1630017309
+      FactoryTilemap_wallfix_60: 483419895
+      FactoryTilemap_wallfix_61: -2033144588
+      FactoryTilemap_wallfix_62: 1613813975
+      FactoryTilemap_wallfix_63: 1614871535
+      FactoryTilemap_wallfix_64: 298193730
+      FactoryTilemap_wallfix_65: -393655591
+      FactoryTilemap_wallfix_66: 286993689
+      FactoryTilemap_wallfix_67: -1543333936
+      FactoryTilemap_wallfix_68: 861208180
+      FactoryTilemap_wallfix_69: -968328666
+      FactoryTilemap_wallfix_7: -1220380512
+      FactoryTilemap_wallfix_70: -1773034111
+      FactoryTilemap_wallfix_71: 1262741858
+      FactoryTilemap_wallfix_72: -829920685
+      FactoryTilemap_wallfix_73: 653485602
+      FactoryTilemap_wallfix_74: -262586142
+      FactoryTilemap_wallfix_75: -1848314801
+      FactoryTilemap_wallfix_76: 1702814694
+      FactoryTilemap_wallfix_77: -323393578
+      FactoryTilemap_wallfix_78: 148523895
+      FactoryTilemap_wallfix_79: -1116857340
+      FactoryTilemap_wallfix_8: -2025318
+      FactoryTilemap_wallfix_80: 621461252
+      FactoryTilemap_wallfix_81: 1538981047
+      FactoryTilemap_wallfix_82: 723067370
+      FactoryTilemap_wallfix_83: 512664404
+      FactoryTilemap_wallfix_84: 387595229
+      FactoryTilemap_wallfix_85: 353182174
+      FactoryTilemap_wallfix_86: -407005831
+      FactoryTilemap_wallfix_9: 168350552
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

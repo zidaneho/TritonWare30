@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{b9b0e7fd-8530-472f-9a37-e7b57d111805}">
 		<property name="name">
-			<value>footsteps-walking</value>
+			<value>monster_footsteps</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -34,6 +34,9 @@
 		<relationship name="parameters">
 			<destination>{d21a1ae9-5124-4df2-a16a-e79499b5bf15}</destination>
 			<destination>{f5c419f7-ca45-4d01-a4f1-d7cebff476eb}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{4e4ec254-57c9-4673-9209-5457439ace5e}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{86e4978f-ef1f-4b52-9119-8b2c606cedd5}">
@@ -111,10 +114,12 @@
 		<property name="length">
 			<value>0.5</value>
 		</property>
+		<property name="startOffset">
+			<value>46.5</value>
+		</property>
 		<relationship name="sounds">
 			<destination>{aac20bdb-3628-40f6-9636-8e9b7100e648}</destination>
 			<destination>{32254b51-6f0f-43b4-889b-05361635df63}</destination>
-			<destination>{7031ce1c-50dd-4db4-b94c-0b242fabe5ec}</destination>
 			<destination>{dddf2fd3-0dad-4882-939d-10b7562e3bb7}</destination>
 			<destination>{a7e8ca82-43fe-44ec-8392-9b53390b7860}</destination>
 			<destination>{8548af52-37fc-43a8-a8c3-af36af55ae56}</destination>
@@ -151,11 +156,6 @@
 	<object class="SingleSound" id="{32254b51-6f0f-43b4-889b-05361635df63}">
 		<relationship name="audioFile">
 			<destination>{971e1450-5791-45d2-b96e-a7b6c12ad518}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{7031ce1c-50dd-4db4-b94c-0b242fabe5ec}">
-		<relationship name="audioFile">
-			<destination>{84f8d662-8bd0-46a4-a7dd-5ddcfb40f33c}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{dddf2fd3-0dad-4882-939d-10b7562e3bb7}">

@@ -1,6 +1,7 @@
     using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -10,6 +11,9 @@ public class FlashlightComponent : MonoBehaviour
     [SerializeField] private ProgressBar batteryBar;
     [SerializeField] private FadeUI batteryFade;
     [SerializeField] private float batteryFadeTolerance;
+    [Header("FMOD")] 
+    [SerializeField] private EventReference turnOnSoundEvent;
+    [SerializeField] private EventReference turnOffSoundEvent;
     [Header("Settings")] 
     [SerializeField] private float maxBattery = 15f;
     [SerializeField] private float rotationSpeed = 10f;
@@ -34,7 +38,7 @@ public class FlashlightComponent : MonoBehaviour
         // for debug purposes
         var oldBattery = _battery;
         
-        // turn flashlight
+        // rotate flashlight
         if (_input.moveVector != Vector2.zero)
         {
             float angle = Mathf.Rad2Deg * Mathf.Atan2(-_input.moveVector.x, _input.moveVector.y);
@@ -51,9 +55,17 @@ public class FlashlightComponent : MonoBehaviour
         _light.enabled = _battery > 0 && _isTurnedOn;            
         
         // turn on/off battery when t is clicked
-        if (_input.wasFlashlightPressedThisFrame)
+        if (_input.wasFlashlightPressedThisFrame && _battery > 0f)
         {
             _isTurnedOn = !_isTurnedOn;
+            if (_isTurnedOn)
+            {
+                Util.PlaySound(turnOnSoundEvent.Path, gameObject);
+            }
+            else
+            {
+                Util.PlaySound(turnOffSoundEvent.Path, gameObject);
+            }
         }
         
         // for debug purposes
