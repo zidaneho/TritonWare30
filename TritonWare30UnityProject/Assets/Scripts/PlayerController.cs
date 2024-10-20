@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float staminaFadeTolerance;
     [Header("FMOD")] 
     [SerializeField] private EventReference footStepsSoundEvent;
+    [Header("Sound Settings")] [SerializeField]
+    private float walkingFootStepTime = 0.5f;
+
+    [SerializeField] private float runningFootStepTime = 0.4f;
+    private float _footStepsTimer;
     [Header("Settings")]
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
@@ -54,6 +59,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         UpdateStamina();
+        UpdateFootsteps();
         
        
     }
@@ -107,6 +113,24 @@ public class PlayerController : MonoBehaviour
             staminaFade.TryFadeOut();
         }
         staminaBar.SetProgress(stamina, maxStamina);
+    }
+    void UpdateFootsteps()
+    {
+        //Player isnt moving, return
+        if (_input.moveVector.sqrMagnitude < 0.1f)
+        {
+            _footStepsTimer = 0f;
+            return;
+        }
+
+        var currentFootStepTime = _currentSpeed > walkSpeed ? runningFootStepTime : walkingFootStepTime;
+        
+        _footStepsTimer += Time.deltaTime;
+        if (_footStepsTimer >= currentFootStepTime)
+        {
+            _footStepsTimer = 0f;
+            Util.PlaySound(footStepsSoundEvent.Path,gameObject);
+        }
     }
 
     void OnRunCanceled()
