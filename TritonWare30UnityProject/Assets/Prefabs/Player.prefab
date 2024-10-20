@@ -782,6 +782,20 @@ MonoBehaviour:
   batteryBar: {fileID: 3706516890711461493}
   batteryFade: {fileID: 1691558414106406141}
   batteryFadeTolerance: 0.0001
+  turnOnSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  turnOffSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   maxBattery: 15
   rotationSpeed: 10
   batteryDrainFactor: 1
@@ -1414,7 +1428,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.25, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
