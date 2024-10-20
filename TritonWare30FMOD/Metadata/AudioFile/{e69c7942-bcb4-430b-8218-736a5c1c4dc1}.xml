@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e69c7942-bcb4-430b-8218-736a5c1c4dc1}">
+		<property name="assetPath">
+			<value>battery_pickup.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.76800000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{aaa603ba-f8b2-4591-b792-243860627a8c}</destination>
+		</relationship>
+	</object>
+</objects>

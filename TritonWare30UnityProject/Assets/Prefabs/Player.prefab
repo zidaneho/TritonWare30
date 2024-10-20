@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 0.1402}
+  m_SizeDelta: {x: 0.7897, y: 0.0959}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7568496684853974573
 CanvasRenderer:
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6003150977383729114}
   - component: {fileID: 7342185362022994233}
   - component: {fileID: 199267926027138890}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: MainHurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 4526850746553196943}
   - component: {fileID: 5941738134163169517}
   - component: {fileID: 2837768472446053632}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: flashLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 724933760638573091}
   - component: {fileID: 2404666163087545063}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: runParticleHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,7 +462,7 @@ Transform:
   m_GameObject: {fileID: 4705985308563967419}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.52, z: 0}
+  m_LocalPosition: {x: 0, y: -0.319, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -621,8 +621,8 @@ MonoBehaviour:
   staminaBar: {fileID: 6424243750756693367}
   staminaFade: {fileID: 6258046602539432178}
   staminaFadeTolerance: 0.0001
-  walkSpeed: 4
-  runSpeed: 10
+  walkSpeed: 3
+  runSpeed: 6
   stamina: 5
   staminaGainFactor: 0.7
   staminaDrainFactor: 1
@@ -732,7 +732,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
+  m_Offset: {x: 0.006700933, y: -0.2945032}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -743,7 +743,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.2}
+  m_Size: {x: 0.32749367, y: 0.12852287}
   m_EdgeRadius: 0
 --- !u!1 &6548079142987209724
 GameObject:
@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 5747735050789345004}
   - component: {fileID: 2269075860258268490}
   - component: {fileID: 1737270924332540035}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: modelPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -774,7 +774,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1220692964778771290}
@@ -903,7 +903,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0.39999998, y: 0.20000002}
+  m_SizeDelta: {x: 0.293, y: 0.1852}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &702505199345805520
 CanvasRenderer:
@@ -1064,8 +1064,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.9200001}
-  m_SizeDelta: {x: 1.2646, y: -0.4895}
+  m_AnchoredPosition: {x: 0, y: -0.546}
+  m_SizeDelta: {x: 0.4428, y: -0.4895}
   m_Pivot: {x: 0.5, y: 0.50000006}
 --- !u!114 &1858151442266172444
 MonoBehaviour:
@@ -1329,7 +1329,7 @@ GameObject:
   - component: {fileID: 9137950946040760312}
   - component: {fileID: 6064951275576247173}
   - component: {fileID: 4774939445769796119}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: playerCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1376,7 +1376,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 40
-    OrthographicSize: 4
+    OrthographicSize: 3
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0

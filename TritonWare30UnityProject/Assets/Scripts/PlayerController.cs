@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -10,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ProgressBar staminaBar;
     [SerializeField] private FadeUI staminaFade;
     [SerializeField] private float staminaFadeTolerance;
+    [Header("FMOD")] 
+    [SerializeField] private EventReference footStepsSoundEvent;
     [Header("Settings")]
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
@@ -51,6 +54,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         UpdateStamina();
+        
+       
     }
 
     private void FixedUpdate()
