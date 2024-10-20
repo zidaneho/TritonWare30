@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{55d64d3c-c82b-44ff-8bba-5f35ed205b86}">
+		<property name="assetPath">
+			<value>footsteps-cellar-26899 - Trimmed.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{aaa603ba-f8b2-4591-b792-243860627a8c}</destination>
+		</relationship>
+	</object>
+</objects>
