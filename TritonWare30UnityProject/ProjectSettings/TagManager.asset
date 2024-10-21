@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - flashLight
+  - Monster
   layers:
   - Default
   - TransparentFX

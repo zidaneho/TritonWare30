@@ -72,7 +72,7 @@ public class FlashlightComponent : MonoBehaviour
         // if (Math.Floor(_battery) != Math.Floor(prevBattery) || _battery == 0) Debug.Log("Battery: " + Math.Ceiling(_battery));
         
         batteryBar.SetProgress(_battery, maxBattery);
-        if (Math.Abs(_battery - oldBattery) > batteryFadeTolerance)
+        if (_isTurnedOn)
         {
             batteryFade.TryFadeIn();
         }

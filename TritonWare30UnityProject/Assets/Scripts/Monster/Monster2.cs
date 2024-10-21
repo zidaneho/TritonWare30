@@ -1,21 +1,24 @@
+using System.Collections;
+using UnityEngine;
 
 //Monster2 will be spawned periodically.
 //Monster2's spawn will trigger an event where lights will be flashing on and off, before the monster rushes the player.
 //The player will have to hide while running from this loud monster.
 //The monster will run over and past the player.
-
-using System.Collections;
-using UnityEngine;
-
 public class Monster2 : MonsterController
 {
-    public enum MonsterState { WINDUP, RUSH, END }
+    public enum MonsterState
+    {
+        WINDUP,
+        RUSH,
+        END
+    }
 
     public MonsterState monsterState = MonsterState.WINDUP;
     [SerializeField] private float windupTime = 5f;
     [SerializeField] private float extraRushDistance = 50f;
     [SerializeField] private float maxDistanceToHidingPlayer = 3f;
-    
+
     private Vector3 _targetPosition;
     private OverlapAttack _attack;
     private HitboxGroup _hitboxGroup;
@@ -28,6 +31,7 @@ public class Monster2 : MonsterController
         _targetPosition = player.transform.position;
         _hitboxGroup = GetComponent<HitboxGroup>();
     }
+
     private void OnEnable()
     {
         ai.onSearchPath += OnSearchPath;
@@ -53,7 +57,8 @@ public class Monster2 : MonsterController
                 monsterState = MonsterState.END;
                 Destroy(gameObject);
             }
-            else if (!_reachedPlayer && ai.reachedDestination || player.IsHiding && ai.remainingDistance < maxDistanceToHidingPlayer)
+            else if (!_reachedPlayer && ai.reachedDestination ||
+                     player.IsHiding && ai.remainingDistance < maxDistanceToHidingPlayer)
             {
                 _reachedPlayer = true;
                 _targetPosition = transform.position + _rushDirection * extraRushDistance;
@@ -63,6 +68,7 @@ public class Monster2 : MonsterController
                 if (!player.IsHiding) _attack.Fire();
             }
         }
+
         OnSearchPath();
     }
 
@@ -80,14 +86,14 @@ public class Monster2 : MonsterController
         _attack.hitboxGroup = _hitboxGroup;
         _attack.damage = 100f;
         _attack.attackerTeam = teamComponent.teamIndex;
-        
-        
+
+
         ai.canMove = true;
         monsterState = MonsterState.RUSH;
     }
+
     void OnSearchPath()
     {
         ai.destination = _targetPosition;
     }
-
 }

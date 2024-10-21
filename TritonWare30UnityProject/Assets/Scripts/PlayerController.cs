@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
             stamina = 0.01f;
         }
         // change from walk/run
-        if (_input.isRunPressed && stamina > 0 && restTime <= 0)
+        if (_input.isRunPressed && stamina > 0 && restTime <= 0 && _input.moveVector != Vector2.zero)
         {
             _currentSpeed = runSpeed;
             // _isRunning = true;
