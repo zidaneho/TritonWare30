@@ -4,6 +4,7 @@ using UnityEngine;
 public class OverlapAttack
 {
     public GameObject attacker;
+    public Sprite attackerSprite; //Designed for Monsters
     public TeamComponent.TeamIndex attackerTeam;
     public float damage;
     public HitboxGroup hitboxGroup;
@@ -35,7 +36,7 @@ public class OverlapAttack
                     {
                         hitEnemy = true;
                         hitHurtboxes.Add(hurtbox);
-                        hurtbox.healthComponent.TakeDamage(damage);
+                        hurtbox.healthComponent.TakeDamage(damage,attackerSprite);
                     }
                 }
             }

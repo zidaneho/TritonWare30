@@ -42,7 +42,7 @@ public class HeartbeatComponent : MonoBehaviour
         }
     }
 
-    void OnDeath()
+    void OnDeath(Sprite attackerSpritec)
     {
         if (_eventInstance.isValid())
         {

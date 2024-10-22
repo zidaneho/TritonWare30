@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,9 +12,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ProgressBar staminaBar;
     [SerializeField] private FadeUI staminaFade;
     [SerializeField] private float staminaFadeTolerance;
+    [SerializeField] private Image jumpscareImage;
+    [SerializeField] private Animator jumpscareAnimator;
     [Header("FMOD")] 
     [SerializeField] private EventReference footStepsSoundEvent;
-
     [SerializeField] private EventReference deathSoundEvent;
     [Header("Sound Settings")] [SerializeField]
     private float walkingFootStepTime = 0.5f;
@@ -172,12 +174,14 @@ public class PlayerController : MonoBehaviour
         Unhide();
     }
 
-    void OnDeath()
+    void OnDeath(Sprite attackerSprite)
     {
         _input.ToggleMoveInput(false);
         Util.PlaySound(deathSoundEvent.Path, gameObject);
         _animator.Play("Death");
+        jumpscareAnimator.Play("Jumpscare");
     }
+    
 
     public float RunSpeed => runSpeed;
     public float CurrentSpeed => _currentSpeed;
