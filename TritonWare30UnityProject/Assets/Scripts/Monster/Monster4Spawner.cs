@@ -43,8 +43,8 @@ public class Monster4Spawner : MonoBehaviour
             if (_timer >= timeBetweenSpawns)
             {
                 var waypointIndex = Random.Range(0, waypointIndexes.Count);
-                waypointIndexes.Remove(waypointIndexes[waypointIndex]);
                 _currentInstances.Add(Instantiate(monsterPrefab, waypoints[waypointIndexes[waypointIndex]].position, Quaternion.identity));
+                waypointIndexes.Remove(waypointIndexes[waypointIndex]);
             }
         }
     }

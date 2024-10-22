@@ -16498,11 +16498,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7834124293529651924, guid: 5422e28bd56e74e3a9b1b32d5fec71dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.51
+      value: -34.566
       objectReference: {fileID: 0}
     - target: {fileID: 7834124293529651924, guid: 5422e28bd56e74e3a9b1b32d5fec71dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.73
+      value: 24.472
       objectReference: {fileID: 0}
     - target: {fileID: 7834124293529651924, guid: 5422e28bd56e74e3a9b1b32d5fec71dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17213,7 +17213,7 @@ MonoBehaviour:
   monsterPrefab: {fileID: 2897981563902469118, guid: 068a3c73b7c454c58a2dbb4119ffd70b, type: 3}
   timeBetweenSpawns: 3
   maxDistance: 200
-  maxInstances: 3
+  maxInstances: 4
   waypoints:
   - {fileID: 559162762}
   - {fileID: 1039997907}
@@ -28915,7 +28915,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1818772512589149135, guid: 90aa748e1ada84f97ba2006709a82566, type: 3}
       propertyPath: keyRequirement
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2961306367810549040, guid: 90aa748e1ada84f97ba2006709a82566, type: 3}
       propertyPath: m_Name
@@ -32933,11 +32933,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3927135864918841021, guid: 57810393d84e84b3281759613a29e5e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.77
+      value: -37.459
       objectReference: {fileID: 0}
     - target: {fileID: 3927135864918841021, guid: 57810393d84e84b3281759613a29e5e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.48
+      value: 28.777
       objectReference: {fileID: 0}
     - target: {fileID: 3927135864918841021, guid: 57810393d84e84b3281759613a29e5e6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -55550,10 +55550,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 55975731625785656, guid: 124e0f326e1a44bc18a146b969bf65b1, type: 3}
-  timeBetweenSpawns: 60
+  timeBetweenSpawns: 50
   startWaypoints:
   - {fileID: 1734810661}
   - {fileID: 1826017841}
+  minTimeBetweenFlicker: 0.25
+  maxTimeBetweenFlicker: 0.4
+  flickerCount: 8
 --- !u!4 &1832149795
 Transform:
   m_ObjectHideFlags: 0
@@ -61032,26 +61035,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 792662258423413801, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: jumpscareEvent.Path
-      value: event:/player_death_start
-      objectReference: {fileID: 0}
-    - target: {fileID: 792662258423413801, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: jumpscareEvent.Guid.Data1
-      value: -199073538
-      objectReference: {fileID: 0}
-    - target: {fileID: 792662258423413801, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: jumpscareEvent.Guid.Data2
-      value: 1276608044
-      objectReference: {fileID: 0}
-    - target: {fileID: 792662258423413801, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: jumpscareEvent.Guid.Data3
-      value: 1305433250
-      objectReference: {fileID: 0}
-    - target: {fileID: 792662258423413801, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: jumpscareEvent.Guid.Data4
-      value: 1090616897
-      objectReference: {fileID: 0}
     - target: {fileID: 1220692964778771290, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
@@ -61092,57 +61075,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2610859177711418689, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2610859177711418689, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2610859177711418689, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2610859177711418689, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5049940676760675177, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740103788549453103, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740103788549453103, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740103788549453103, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5740103788549453103, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6064951275576247173, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: Lens.OrthographicSize
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6869273581739915457, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: m_Intensity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6869273581739915457, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.451
-      objectReference: {fileID: 0}
-    - target: {fileID: 6869273581739915457, guid: 3fc7c7c17df3c4dc2a0eea21123559b3, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -106,9 +106,13 @@ public class Monster4 : MonsterController
                 }
                 ai.canMove = true;
                 ai.destination = player.transform.position;
-                if (_attack != null && _attack.Fire())
+                if (!player.IsHiding&&_attack != null && _attack.Fire())
                 {
                     Util.PlaySound(GameManager.jumpScareSoundEvent,gameObject);
+                    Destroy(gameObject);
+                }
+                else if (player.IsHiding)
+                {
                     Destroy(gameObject);
                 }
                 break;

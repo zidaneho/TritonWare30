@@ -9,7 +9,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private LayerMask interactLayer;
 
     private InputBank _input;
-    private Collider2D[] results = new Collider2D[10];
+    private Collider2D[] results = new Collider2D[30];
 
     private void Awake()
     {

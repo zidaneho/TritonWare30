@@ -77,8 +77,12 @@ public class Monster2 : MonsterController
                 monsterState = MonsterState.END;
                 Destroy(gameObject);
             }
-            else if (!_reachedPlayer && ai.reachedDestination ||
-                     player.IsHiding && ai.remainingDistance < maxDistanceToHidingPlayer)
+            else if (!_reachedPlayer && ai.reachedDestination)
+            {
+                
+                _targetPosition = player.transform.position;
+            }
+            else if (player.IsHiding && ai.remainingDistance < maxDistanceToHidingPlayer)
             {
                 _reachedPlayer = true;
                 _targetPosition = transform.position + _rushDirection * extraRushDistance;

@@ -974,27 +974,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368bcf921469f0744b281e100f75e187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverSoundEvent:
-    Guid:
-      Data1: 1158162398
-      Data2: 1103614058
-      Data3: -435822936
-      Data4: 1109279812
-    Path: event:/hover
-  clickSoundEvent:
-    Guid:
-      Data1: 1796984156
-      Data2: 1312427697
-      Data3: 165785994
-      Data4: -1855235651
-    Path: event:/click
-  pauseSoundEvent:
-    Guid:
-      Data1: 1473514812
-      Data2: 1136359324
-      Data3: 1549461397
-      Data4: -1708633947
-    Path: event:/pause
 --- !u!1 &1989607086225105170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,20 +1246,6 @@ MonoBehaviour:
   batteryBar: {fileID: 3706516890711461493}
   batteryFade: {fileID: 1691558414106406141}
   batteryFadeTolerance: 0.0001
-  turnOnSoundEvent:
-    Guid:
-      Data1: -1833809068
-      Data2: 1101533308
-      Data3: 153495446
-      Data4: -324995318
-    Path: event:/flashlight_on
-  turnOffSoundEvent:
-    Guid:
-      Data1: -1461709407
-      Data2: 1079624071
-      Data3: 920565638
-      Data4: -1176714149
-    Path: event:/flashlight_off
   maxBattery: 15
   rotationSpeed: 10
   batteryDrainFactor: 0.7
@@ -2043,7 +2008,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.451
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
@@ -2066,8 +2031,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 3.841782
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 2
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -2096,20 +2061,6 @@ MonoBehaviour:
   pauseMenu: {fileID: 2792385120116932997}
   jumpscareImage: {fileID: 961024741475435924}
   jumpscareAnimator: {fileID: 7177659171395067152}
-  footStepsSoundEvent:
-    Guid:
-      Data1: -1187580341
-      Data2: 1134325768
-      Data3: -1637101636
-      Data4: -503176579
-    Path: event:/player_footsteps
-  deathSoundEvent:
-    Guid:
-      Data1: -199073538
-      Data2: 1276608044
-      Data3: 1305433250
-      Data4: 1090616897
-    Path: event:/player_death_start
   walkingFootStepTime: 0.5
   runningFootStepTime: 0.4
   walkSpeed: 3
@@ -2147,7 +2098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1837618a0af58d4db347b491ed3414a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRadius: 1.38
+  interactionRadius: 1.5
   interactLayer:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3997,7 +3948,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 40
-    OrthographicSize: 3
+    OrthographicSize: 4
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
