@@ -7,6 +7,7 @@ using UnityEngine.Rendering.Universal;
 //Should not be used on the player. This is for monsters
 public class FlashlightComponent : MonoBehaviour
 {
+    [SerializeField] private GameObject lightObject;
     [Header("UI")] 
     [SerializeField] private ProgressBar batteryBar;
     [SerializeField] private FadeUI batteryFade;
@@ -22,13 +23,11 @@ public class FlashlightComponent : MonoBehaviour
     [Header("Runtime")]
     [SerializeField] private float _battery = 15;
     [SerializeField] private bool _isTurnedOn; 
-    
-    private Light2D _light;
+  
     private InputBank _input;
-
+  
     private void Awake()
     {
-        _light = GetComponent<Light2D>();
         _input = GetComponentInParent<InputBank>();
         _isTurnedOn = true;
     }
@@ -52,7 +51,9 @@ public class FlashlightComponent : MonoBehaviour
         {
             _battery = Math.Max(_battery - batteryDrainFactor * Time.deltaTime, 0);
         }
-        _light.enabled = _battery > 0 && _isTurnedOn;            
+
+        bool enableLight = _battery > 0 && _isTurnedOn;
+        lightObject.SetActive(enableLight);
         
         // turn on/off battery when t is clicked
         if (_input.wasFlashlightPressedThisFrame && _battery > 0f)
@@ -67,6 +68,10 @@ public class FlashlightComponent : MonoBehaviour
                 Util.PlaySound(turnOffSoundEvent.Path, gameObject);
             }
         }
+        else if (_battery <= 0)
+        {
+            _isTurnedOn = false;
+        }
         
         // for debug purposes
         // if (Math.Floor(_battery) != Math.Floor(prevBattery) || _battery == 0) Debug.Log("Battery: " + Math.Ceiling(_battery));
@@ -78,35 +83,10 @@ public class FlashlightComponent : MonoBehaviour
         }
         else
         {
-            batteryFade.TryFadeOut();   
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        var litComponent = collision.gameObject.GetComponent<LitComponent>();
-
-        if (litComponent != null)
-        {
-            litComponent.litObjects++;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        var litComponent = collision.gameObject.GetComponent<LitComponent>();
-
-        if (litComponent != null)
-        {
-            litComponent.litObjects--;
+            batteryFade.TryFadeOut();
         }
     }
     
-    // Toggle light on and off
-    public void Toggle(bool value)
-    {
-        _light.enabled = value;
-    }
     
     // Getter and setter for _battery variable
     public void increaseBattery(float inc)

@@ -6,10 +6,11 @@
 using System;
 using System.Timers;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Monster4 : MonsterController
 {
-    
+    [SerializeField] private Light2D[] eyeLights;
     public MonsterState monsterState = MonsterState.IDLE;
     [SerializeField] private float windupTime = 1f;
     [SerializeField] private float chaseSpeed = 6f;
@@ -35,6 +36,21 @@ public class Monster4 : MonsterController
 
     void UpdateStates()
     {
+        if (_litComponent.isLit)
+        {
+            foreach (var light2D in eyeLights)
+            {
+                light2D.enabled = false;
+            }
+        }
+        else
+        {
+            foreach (var light2D in eyeLights)
+            {
+                light2D.enabled = true;
+            }
+        }
+        
         if (_litComponent.isLit)
         {
             monsterState = MonsterState.IDLE;
@@ -63,11 +79,13 @@ public class Monster4 : MonsterController
                 if (_windupTimer >= windupTime)
                 {
                     monsterState = MonsterState.CHASE;
+                    ai.maxSpeed = chaseSpeed;
                     _attack = new OverlapAttack();
                     _attack.attackerTeam = TeamComponent.TeamIndex.MONSTER;
                     _attack.attacker = gameObject;
                     _attack.hitboxGroup = _hitboxGroup;
                     _attack.damage = 100f;
+                    
                 }
                 break;
             case MonsterState.CHASE:

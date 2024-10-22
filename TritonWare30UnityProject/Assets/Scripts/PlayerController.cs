@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float staminaFadeTolerance;
     [Header("FMOD")] 
     [SerializeField] private EventReference footStepsSoundEvent;
+
+    [SerializeField] private EventReference deathSoundEvent;
     [Header("Sound Settings")] [SerializeField]
     private float walkingFootStepTime = 0.5f;
 
@@ -35,6 +37,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidbody;
     private InputBank _input;
+    private HealthComponent _healthComponent;
+    private Animator _animator;
     private float _currentSpeed;
 
     private void Awake()
@@ -42,6 +46,8 @@ public class PlayerController : MonoBehaviour
         _input = GetComponent<InputBank>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _healthComponent = GetComponent<HealthComponent>();
+        _animator = GetComponentInChildren<Animator>();
         
         _currentSpeed = walkSpeed;
     }
@@ -49,11 +55,13 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         _input.RunCanceled += OnRunCanceled;
+        _healthComponent.Died += OnDeath;
     }
 
     private void OnDisable()
     {
         _input.RunCanceled -= OnRunCanceled;
+        _healthComponent.Died -= OnDeath;
     }
     
     private void Update()
@@ -162,6 +170,13 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(hideTime);
         Unhide();
+    }
+
+    void OnDeath()
+    {
+        _input.ToggleMoveInput(false);
+        Util.PlaySound(deathSoundEvent.Path, gameObject);
+        _animator.Play("Death");
     }
 
     public float RunSpeed => runSpeed;

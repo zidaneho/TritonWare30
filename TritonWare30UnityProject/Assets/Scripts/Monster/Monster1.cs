@@ -61,6 +61,11 @@ public class Monster1 : MonsterController
 
     private void Start()
     {
+        if (waypointManager == null)
+        {
+            Debug.LogError("Please assign waypoints for Monster 1 to patrol, using the Waypoint Manager script");
+            return;
+        }
         target = waypointManager.waypoints[0];
         ai.maxSpeed = monsterSpeed;
     }
@@ -68,6 +73,10 @@ public class Monster1 : MonsterController
 
     private void Update()
     {
+        if (waypointManager == null)
+        {
+            return;
+        }
         if (monsterState == MonsterState.PATROL)
         {
             target = waypointManager.waypoints[currentWaypoint];

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
+    public event Action Died;
     public bool alive = true;
     public float health = 100f;
 
@@ -19,6 +20,9 @@ public class HealthComponent : MonoBehaviour
 
     void Die()
     {
+        //If we are already dead, we do not need to call this function again
+        if (!alive) return;
         alive = false;
+        Died?.Invoke();
     }
 }
