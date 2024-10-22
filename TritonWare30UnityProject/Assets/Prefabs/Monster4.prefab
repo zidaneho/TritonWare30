@@ -172,6 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0765ec85b2d04394abd64967ad71949b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterSprite: {fileID: -260064329, guid: 0fb6e780de7ec469a8967be197928f15, type: 3}
+  eyeLights: []
   monsterState: 0
   windupTime: 1.5
   chaseSpeed: 6.5

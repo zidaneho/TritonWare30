@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1637018251
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1158897860, guid: 662921a3b2c15ec48bee508bd3fde9c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8c20135db6485dbc0ec1578036efce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterSprite: {fileID: 1158897860, guid: 662921a3b2c15ec48bee508bd3fde9c4, type: 3}
   waypointManagerName: Monster1
   currentWaypoint: 0
   monsterState: 0
@@ -227,6 +228,8 @@ MonoBehaviour:
   lostTime: 3
   chaseRadius: 25
   cooldownTime: 5
+  timeBetweenPlayIdle: 10
+  timeBetweenPlayChase: 5
   lostTimer: 0
 --- !u!114 &1024741595150949692
 MonoBehaviour:

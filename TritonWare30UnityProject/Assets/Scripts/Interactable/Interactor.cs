@@ -34,7 +34,6 @@ public class Interactor : MonoBehaviour
         for (int i = 0; i < size; i++)
         {
             var interactable = results[i].GetComponent<IInteractable>();
-
             var distance = Vector2.Distance(transform.position, results[i].transform.position);
             if (interactable != null && distance < shortestDistance)
             {

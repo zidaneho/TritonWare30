@@ -21,6 +21,9 @@ public class Monster4 : MonsterController
     private HitboxGroup _hitboxGroup;
 
     [SerializeField]private float _windupTimer;
+    private float _soundTimer;
+    [SerializeField] private float timeBetweenPlayIdle = 10f;
+    [SerializeField] private float timeBetweenPlayChase = 5f;
     protected override void Awake()
     {
         base.Awake();
@@ -72,6 +75,12 @@ public class Monster4 : MonsterController
         {
             case MonsterState.IDLE:
                 ai.canMove = false;
+                _soundTimer += Time.deltaTime;
+                if (_soundTimer >= timeBetweenPlayIdle)
+                {
+                    _soundTimer = 0f;
+                    Util.PlaySound(GameManager.instance.chaseSoundEvent.Path,gameObject);
+                }
                 break;
             case MonsterState.WINDUP:
                 ai.canMove = false;
@@ -83,16 +92,23 @@ public class Monster4 : MonsterController
                     _attack = new OverlapAttack();
                     _attack.attackerTeam = TeamComponent.TeamIndex.MONSTER;
                     _attack.attacker = gameObject;
+                    _attack.attackerSprite = monsterSprite;
                     _attack.hitboxGroup = _hitboxGroup;
                     _attack.damage = 100f;
-                    
                 }
                 break;
             case MonsterState.CHASE:
+                _soundTimer += Time.deltaTime;
+                if (_soundTimer >= timeBetweenPlayChase)
+                {
+                    _soundTimer = 0f;
+                    Util.PlaySound(GameManager.instance.chaseSoundEvent.Path,gameObject);
+                }
                 ai.canMove = true;
                 ai.destination = player.transform.position;
                 if (_attack != null && _attack.Fire())
                 {
+                    Util.PlaySound(GameManager.instance.jumpScareSoundEvent.Path,gameObject);
                     Destroy(gameObject);
                 }
                 break;

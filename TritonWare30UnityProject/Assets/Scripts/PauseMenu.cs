@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,13 @@ public class PauseMenu : MonoBehaviour
     public bool gamePaused;
     public string MenuScene;
     public string GameScene;
+
+    private UISoundPlayer _uiSoundPlayer;
+
+    private void Awake()
+    {
+        _uiSoundPlayer = GetComponent<UISoundPlayer>();
+    }
 
     void Start() 
     {
@@ -35,6 +43,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        _uiSoundPlayer.PlayPause();
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         gamePaused = true;

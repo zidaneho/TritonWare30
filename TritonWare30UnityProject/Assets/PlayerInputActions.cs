@@ -62,15 +62,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Battery"",
-                    ""type"": ""Button"",
-                    ""id"": ""512cae14-244d-4b5d-9319-ce13fea1c71e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -231,33 +222,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7192039b-8a20-40e1-9f08-e22d9eb87c34"",
-                    ""path"": ""<Keyboard>/t"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Flashlight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7750dee3-bcc6-4041-9472-5b7c798c1b0b"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Battery"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2ffd74f3-6c6b-4770-a407-2fc7da20d950"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Battery"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -272,7 +241,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_Run = m_Gameplay.FindAction("Run", throwIfNotFound: true);
         m_Gameplay_Flashlight = m_Gameplay.FindAction("Flashlight", throwIfNotFound: true);
-        m_Gameplay_Battery = m_Gameplay.FindAction("Battery", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -338,7 +306,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_Run;
     private readonly InputAction m_Gameplay_Flashlight;
-    private readonly InputAction m_Gameplay_Battery;
     public struct GameplayActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -347,7 +314,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputAction @Run => m_Wrapper.m_Gameplay_Run;
         public InputAction @Flashlight => m_Wrapper.m_Gameplay_Flashlight;
-        public InputAction @Battery => m_Wrapper.m_Gameplay_Battery;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -369,9 +335,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Flashlight.started += instance.OnFlashlight;
             @Flashlight.performed += instance.OnFlashlight;
             @Flashlight.canceled += instance.OnFlashlight;
-            @Battery.started += instance.OnBattery;
-            @Battery.performed += instance.OnBattery;
-            @Battery.canceled += instance.OnBattery;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -388,9 +351,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Flashlight.started -= instance.OnFlashlight;
             @Flashlight.performed -= instance.OnFlashlight;
             @Flashlight.canceled -= instance.OnFlashlight;
-            @Battery.started -= instance.OnBattery;
-            @Battery.performed -= instance.OnBattery;
-            @Battery.canceled -= instance.OnBattery;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -414,6 +374,5 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnFlashlight(InputAction.CallbackContext context);
-        void OnBattery(InputAction.CallbackContext context);
     }
 }

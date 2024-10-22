@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour
 {
+    [SerializeField] protected Sprite monsterSprite;
+    
     protected Animator _animator;
     protected IAstarAI ai;
     protected TeamComponent teamComponent;

@@ -23,11 +23,14 @@ public class Monster1 : MonsterController
     [SerializeField] private float lostTime = 3f;
     [SerializeField] private float chaseRadius = 25f;
     [SerializeField] private float cooldownTime = 5f;
+    [SerializeField] private float timeBetweenPlayIdle = 10f;
+    [SerializeField] private float timeBetweenPlayChase = 5f;
     
     [Header("Runtime")]
     private float timer;
     [SerializeField] private float lostTimer;
     private OverlapAttack attack;
+    private float _soundTimer = 0f;
 
     protected override void Awake()
     {
@@ -79,6 +82,12 @@ public class Monster1 : MonsterController
         }
         if (monsterState == MonsterState.PATROL)
         {
+            _soundTimer += Time.deltaTime;
+            if (_soundTimer >= timeBetweenPlayIdle)
+            {
+                _soundTimer = 0f;
+                Util.PlaySound(GameManager.instance.idleSoundEvent.Path,gameObject);
+            }
             target = waypointManager.waypoints[currentWaypoint];
             if (ai.reachedDestination)
             {
@@ -100,6 +109,12 @@ public class Monster1 : MonsterController
         {
             timer += Time.deltaTime;
             
+            _soundTimer += Time.deltaTime;
+            if (_soundTimer >= timeBetweenPlayChase)
+            {
+                _soundTimer = 0f;
+                Util.PlaySound(GameManager.instance.chaseSoundEvent.Path,gameObject);
+            }
             
             if (player.IsHiding)
             {
@@ -115,8 +130,15 @@ public class Monster1 : MonsterController
                 target = player.transform;
                 lostTimer = 0f;
                 
-                if (timer >= chaseTime || attack.Fire())
+                if (timer >= chaseTime)
                 {
+                    
+                    monsterState = MonsterState.COOLDOWN;
+                    StartCoroutine(CooldownCoroutine());
+                }
+                else if (attack.Fire())
+                {
+                    Util.PlaySound(GameManager.instance.jumpScareSoundEvent.Path,gameObject);
                     monsterState = MonsterState.COOLDOWN;
                     StartCoroutine(CooldownCoroutine());
                 }
@@ -138,6 +160,7 @@ public class Monster1 : MonsterController
         //Play light events and starting sounds here.
         attack = new OverlapAttack();
         attack.attacker = gameObject;
+        attack.attackerSprite = monsterSprite;
         attack.damage = 100;
         attack.attackerTeam = teamComponent.teamIndex;
         attack.hitboxGroup = GetComponent<HitboxGroup>();

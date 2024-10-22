@@ -18,12 +18,16 @@ public class Monster2 : MonsterController
     [SerializeField] private float windupTime = 5f;
     [SerializeField] private float extraRushDistance = 50f;
     [SerializeField] private float maxDistanceToHidingPlayer = 3f;
+    [SerializeField] private float timeBetweenPlayChase = 5f;
 
     private Vector3 _targetPosition;
     private OverlapAttack _attack;
     private HitboxGroup _hitboxGroup;
     private Vector3 _rushDirection;
     private bool _reachedPlayer;
+    private float _soundTimer;
+    private float killTime = 5f;
+    private float killTimer = 0f;
 
     protected override void Awake()
     {
@@ -46,13 +50,29 @@ public class Monster2 : MonsterController
     {
         monsterState = MonsterState.WINDUP;
         StartCoroutine(WindupCoroutine());
+        Util.PlaySound(GameManager.instance.flickerLightsSoundEvent.Path,gameObject);
     }
 
     void Update()
     {
         if (monsterState == MonsterState.RUSH)
         {
-            if (_reachedPlayer && ai.reachedDestination)
+            if (_reachedPlayer)
+            {
+                killTimer += Time.deltaTime;
+            }
+            else
+            {
+                killTimer = 0f;
+            }
+            _soundTimer += Time.deltaTime;
+            
+            if (!_reachedPlayer && _soundTimer >= timeBetweenPlayChase)
+            {
+                _soundTimer = 0f;
+                Util.PlaySound(GameManager.instance.chaseSoundEvent.Path,gameObject);
+            }
+            if (_reachedPlayer && ai.reachedDestination || _reachedPlayer && killTimer >= killTime)
             {
                 monsterState = MonsterState.END;
                 Destroy(gameObject);
@@ -65,7 +85,13 @@ public class Monster2 : MonsterController
             }
             else
             {
-                if (!player.IsHiding) _attack.Fire();
+                if (!player.IsHiding)
+                {
+                    if (_attack.Fire())
+                    {
+                        Util.PlaySound(GameManager.instance.jumpScareSoundEvent.Path,gameObject);
+                    }
+                }
             }
         }
 
@@ -83,6 +109,7 @@ public class Monster2 : MonsterController
 
         _attack = new OverlapAttack();
         _attack.attacker = gameObject;
+        _attack.attackerSprite = monsterSprite;
         _attack.hitboxGroup = _hitboxGroup;
         _attack.damage = 100f;
         _attack.attackerTeam = teamComponent.teamIndex;

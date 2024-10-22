@@ -6,6 +6,8 @@ public class LockedDoor : MonoBehaviour, IInteractable
 {
     [SerializeField] private int keyRequirement = 1;
     [SerializeField] private Collider2D[] openedDoorCollider;
+    [SerializeField] private Collider2D closedDoorCollider;
+    [SerializeField] private Collider2D victoryCollider;
     
     public string popupDescription => "Open";
     
@@ -19,6 +21,8 @@ public class LockedDoor : MonoBehaviour, IInteractable
     {
         _animator = GetComponent<Animator>();
         _collider = GetComponent<BoxCollider2D>();
+        
+        victoryCollider.gameObject.SetActive(false);
     }
 
     public void OnInteract(GameObject interactor)
@@ -30,6 +34,7 @@ public class LockedDoor : MonoBehaviour, IInteractable
             _collider.enabled = false;
             keyComponent.RemoveKeys(keyRequirement);
             _animator.Play("OpenDoor");
+            victoryCollider.gameObject.SetActive(true);
         }
     }
 }

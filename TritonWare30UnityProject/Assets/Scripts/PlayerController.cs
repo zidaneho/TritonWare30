@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using FMODUnity;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ProgressBar staminaBar;
     [SerializeField] private FadeUI staminaFade;
     [SerializeField] private float staminaFadeTolerance;
+    [SerializeField] private PauseMenu pauseMenu;
     [SerializeField] private Image jumpscareImage;
     [SerializeField] private Animator jumpscareAnimator;
     [Header("FMOD")] 
@@ -79,6 +81,11 @@ public class PlayerController : MonoBehaviour
         // move the player
         Vector2 newPos = (Vector2)transform.position + _currentSpeed * Time.deltaTime * _input.moveVector;
         _rigidbody.MovePosition(newPos);
+    }
+
+    public void WinGame()
+    {
+        pauseMenu.WinGame();
     }
     
     public int GetStamina()
@@ -179,7 +186,24 @@ public class PlayerController : MonoBehaviour
         _input.ToggleMoveInput(false);
         Util.PlaySound(deathSoundEvent.Path, gameObject);
         _animator.Play("Death");
+        
+        jumpscareAnimator.gameObject.SetActive(true);
         jumpscareAnimator.Play("Jumpscare");
+        jumpscareImage.sprite = attackerSprite;
+
+        GameManager.instance.KillAllMonsters();
+        GameManager.instance.KillMonsterSpawners();
+        
+        StartCoroutine(OnDeathCoroutine());
+    }
+
+    IEnumerator OnDeathCoroutine()
+    {
+        yield return new WaitForSeconds(3f);
+        jumpscareAnimator.Play("JumpscareFadeOut");
+        yield return new WaitForSeconds(2f);
+        jumpscareAnimator.gameObject.SetActive(false);
+        pauseMenu.DeathMenu();
     }
     
 
