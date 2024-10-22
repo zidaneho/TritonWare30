@@ -19,6 +19,11 @@
 - More visual effects
 - Better monster behavior
 ## Credits
-### TritonWare kickoff game made by Team 30 of 2024.
+### UCSD VGDC's TritonWare kickoff game made by Team 30 of 2024.
 - **Programmers:** Zidane Ho, Isabel Ku, Basil Thaddeus, 
 - **Art:** Jane Lim, Duy Nguyen
+#### Third Party Assets:
+- A* Pathfinding Project
+- DOTween
+- FMOD
+- All Audio is Royalty-Free
