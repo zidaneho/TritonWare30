@@ -34,15 +34,22 @@ public class Monster4Spawner : MonoBehaviour
         if (_currentInstances.Count < maxInstances)
         {
             _timer += Time.deltaTime;
+            List<int> waypointIndexes = new List<int>();
+            for(int i = 0; i < waypoints.Length; i++)
+            {
+                waypointIndexes.Add(i);
+            }
 
             if (_timer >= timeBetweenSpawns)
             {
-                _currentInstances.Add(Instantiate(monsterPrefab, GetRandomWaypoint(), Quaternion.identity));
+                var waypointIndex = Random.Range(0, waypointIndexes.Count);
+                waypointIndexes.Remove(waypointIndexes[waypointIndex]);
+                _currentInstances.Add(Instantiate(monsterPrefab, waypoints[waypointIndexes[waypointIndex]].position, Quaternion.identity));
             }
         }
     }
 
-    Vector2 GetRandomWaypoint()
+    Vector2 GetRandomWaypointIndex()
     {
         var waypointIndex = Random.Range(0, waypoints.Length);
         return waypoints[waypointIndex].position;

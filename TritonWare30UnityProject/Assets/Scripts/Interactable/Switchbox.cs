@@ -21,6 +21,7 @@ public class Switchbox : MonoBehaviour, IInteractable
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        SwitchValue(turnedOn);
         
     }
 
@@ -28,10 +29,6 @@ public class Switchbox : MonoBehaviour, IInteractable
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         SwitchValue(turnedOn);
-        if (turnedOn)
-        {
-            StartCoroutine(DurationCoroutine());
-        }
     }
 
     public void OnInteract(GameObject interactor)
@@ -40,8 +37,6 @@ public class Switchbox : MonoBehaviour, IInteractable
         if (turnedOn) return;
 
         SwitchValue(true);
-
-        StartCoroutine(DurationCoroutine());
     }
 
     IEnumerator DurationCoroutine()
@@ -57,8 +52,9 @@ public class Switchbox : MonoBehaviour, IInteractable
         _spriteRenderer.sprite = value ? turnedOnSprite : turnedOffSprite;
         foreach (var light2D in connectedLights)
         {
-            light2D.enabled = value;
+            light2D.gameObject.SetActive(value);
         }
+        if (value) StartCoroutine(DurationCoroutine());
     }
     
 }

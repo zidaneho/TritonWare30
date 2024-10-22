@@ -177,11 +177,13 @@ MonoBehaviour:
   monsterState: 0
   windupTime: 1.5
   chaseSpeed: 6.5
-  chaseRadius: 10
+  chaseRadius: 2.5
   layerMask:
     serializedVersion: 2
     m_Bits: 384
   _windupTimer: 0
+  timeBetweenPlayIdle: 10
+  timeBetweenPlayChase: 5
 --- !u!114 &1124365025568845833
 MonoBehaviour:
   m_ObjectHideFlags: 0

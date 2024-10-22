@@ -24,10 +24,12 @@ public class FlashlightComponent : MonoBehaviour
     [SerializeField] private bool _isTurnedOn; 
   
     private InputBank _input;
+    private PlayerController _player;
   
     private void Awake()
     {
         _input = GetComponentInParent<InputBank>();
+        _player = GetComponentInParent<PlayerController>();
         _isTurnedOn = true;
     }
 
@@ -55,7 +57,11 @@ public class FlashlightComponent : MonoBehaviour
         lightObject.SetActive(enableLight);
         
         // turn on/off battery when t is clicked
-        if (_input.wasFlashlightPressedThisFrame && _battery > 0f)
+        if (_player.IsHiding)
+        {
+            _isTurnedOn = false;
+        }
+        else if (_input.wasFlashlightPressedThisFrame && _battery > 0f)
         {
             _isTurnedOn = !_isTurnedOn;
             if (_isTurnedOn)
