@@ -18,4 +18,19 @@ public static class Util
         eventInstance.start();
         eventInstance.release();
     }
+    public static EventInstance PlaySound(string eventName, GameObject gameObject, bool releaseInstance)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(eventName);
+        
+        var transform = new FMOD.ATTRIBUTES_3D
+        {
+            position = new FMOD.VECTOR { x = gameObject.transform.position.x, y = gameObject.transform.position.y, z = 0 }, // Set Z to 0 for 2D
+            forward = new FMOD.VECTOR { x = 0, y = 0, z = 1 },  // Direction the sound is facing
+            up = new FMOD.VECTOR { x = 0, y = 1, z = 0 }       // Up direction
+        };
+        eventInstance.set3DAttributes(transform);
+        eventInstance.start();
+        if (releaseInstance) eventInstance.release();
+        return eventInstance;
+    }
 }

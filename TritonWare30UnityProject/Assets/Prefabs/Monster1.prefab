@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 301797790225331037}
   m_Layer: 0
   m_Name: Monster1
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   monsterSpeed: 5
   chaseTime: 50
   lostTime: 3
-  chaseRadius: 25
+  chaseRadius: 10
   cooldownTime: 5
   timeBetweenPlayIdle: 10
   timeBetweenPlayChase: 5
@@ -360,7 +360,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.03241223, y: 0.03241217}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -371,7 +371,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.7778906, y: 1.9723632}
   m_EdgeRadius: 0
 --- !u!114 &5230149035891591999
 MonoBehaviour:

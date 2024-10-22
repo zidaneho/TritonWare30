@@ -5,22 +5,22 @@ using UnityEngine;
 
 public class UISoundPlayer : MonoBehaviour
 {
-    public EventReference hoverSoundEvent;
-    public EventReference clickSoundEvent;
-    public EventReference pauseSoundEvent;
+    private string hoverSoundEvent = "event:/hover";
+    private string clickSoundEvent = "event:/click";
+    private string pauseSoundEvent = "event:/pause";
     
     public void PlayHover()
     {
-        Util.PlaySound(hoverSoundEvent.Path,gameObject);
+        Util.PlaySound(hoverSoundEvent,gameObject);
     }
 
     public void PlayPause()
     {
-        Util.PlaySound(pauseSoundEvent.Path,gameObject);
+        Util.PlaySound(pauseSoundEvent,gameObject);
     }
 
     public void PlayClick()
     {
-        Util.PlaySound(clickSoundEvent.Path,gameObject);
+        Util.PlaySound(clickSoundEvent,gameObject);
     }
 }

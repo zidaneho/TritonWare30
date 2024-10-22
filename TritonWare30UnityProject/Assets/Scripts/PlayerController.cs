@@ -16,9 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PauseMenu pauseMenu;
     [SerializeField] private Image jumpscareImage;
     [SerializeField] private Animator jumpscareAnimator;
-    [Header("FMOD")] 
-    [SerializeField] private EventReference footStepsSoundEvent;
-    [SerializeField] private EventReference deathSoundEvent;
+    [Header("FMOD")] private string footStepsSoundEvent = "event:/player_footsteps";
+    private string deathSoundEvent = "event:/player_death_start";
     [Header("Sound Settings")] [SerializeField]
     private float walkingFootStepTime = 0.5f;
 
@@ -146,7 +145,7 @@ public class PlayerController : MonoBehaviour
         if (_footStepsTimer >= currentFootStepTime)
         {
             _footStepsTimer = 0f;
-            Util.PlaySound(footStepsSoundEvent.Path,gameObject);
+            Util.PlaySound(footStepsSoundEvent,gameObject);
         }
     }
 
@@ -184,7 +183,7 @@ public class PlayerController : MonoBehaviour
     void OnDeath(Sprite attackerSprite)
     {
         _input.ToggleMoveInput(false);
-        Util.PlaySound(deathSoundEvent.Path, gameObject);
+        Util.PlaySound(deathSoundEvent, gameObject);
         _animator.Play("Death");
         
         jumpscareAnimator.gameObject.SetActive(true);

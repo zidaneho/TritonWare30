@@ -50,7 +50,7 @@ public class Monster2 : MonsterController
     {
         monsterState = MonsterState.WINDUP;
         StartCoroutine(WindupCoroutine());
-        Util.PlaySound(GameManager.instance.flickerLightsSoundEvent.Path,gameObject);
+        Util.PlaySound(GameManager.flickerLightsSoundEvent,gameObject);
     }
 
     void Update()
@@ -70,7 +70,7 @@ public class Monster2 : MonsterController
             if (!_reachedPlayer && _soundTimer >= timeBetweenPlayChase)
             {
                 _soundTimer = 0f;
-                Util.PlaySound(GameManager.instance.chaseSoundEvent.Path,gameObject);
+                Util.PlaySound(GameManager.chaseSoundEvent,gameObject);
             }
             if (_reachedPlayer && ai.reachedDestination || _reachedPlayer && killTimer >= killTime)
             {
@@ -89,7 +89,7 @@ public class Monster2 : MonsterController
                 {
                     if (_attack.Fire())
                     {
-                        Util.PlaySound(GameManager.instance.jumpScareSoundEvent.Path,gameObject);
+                        Util.PlaySound(GameManager.jumpScareSoundEvent,gameObject);
                     }
                 }
             }

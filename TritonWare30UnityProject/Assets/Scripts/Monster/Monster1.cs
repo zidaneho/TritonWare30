@@ -86,7 +86,7 @@ public class Monster1 : MonsterController
             if (_soundTimer >= timeBetweenPlayIdle)
             {
                 _soundTimer = 0f;
-                Util.PlaySound(GameManager.instance.idleSoundEvent.Path,gameObject);
+                Util.PlaySound(GameManager.idleSoundEvent,gameObject);
             }
             target = waypointManager.waypoints[currentWaypoint];
             if (ai.reachedDestination)
@@ -113,7 +113,7 @@ public class Monster1 : MonsterController
             if (_soundTimer >= timeBetweenPlayChase)
             {
                 _soundTimer = 0f;
-                Util.PlaySound(GameManager.instance.chaseSoundEvent.Path,gameObject);
+                Util.PlaySound(GameManager.chaseSoundEvent,gameObject);
             }
             
             if (player.IsHiding)
@@ -138,7 +138,7 @@ public class Monster1 : MonsterController
                 }
                 else if (attack.Fire())
                 {
-                    Util.PlaySound(GameManager.instance.jumpScareSoundEvent.Path,gameObject);
+                    Util.PlaySound(GameManager.jumpScareSoundEvent,gameObject);
                     monsterState = MonsterState.COOLDOWN;
                     StartCoroutine(CooldownCoroutine());
                 }

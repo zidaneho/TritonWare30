@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterFootstepsComponent : MonoBehaviour
 {
-    [SerializeField] private EventReference footStepsSoundEvent;
+    //[SerializeField] private EventReference footStepsSoundEvent;
     [SerializeField] private float footstepTime;
     private float _footStepsTimer;
 
@@ -34,7 +34,7 @@ public class MonsterFootstepsComponent : MonoBehaviour
         if (_footStepsTimer >= footstepTime)
         {
             _footStepsTimer = 0f;
-            Util.PlaySound(footStepsSoundEvent.Path,gameObject);
+            //Util.PlaySound(footStepsSoundEvent.Path,gameObject);
         }
     }
 }

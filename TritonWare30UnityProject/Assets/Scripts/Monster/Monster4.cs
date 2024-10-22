@@ -79,7 +79,7 @@ public class Monster4 : MonsterController
                 if (_soundTimer >= timeBetweenPlayIdle)
                 {
                     _soundTimer = 0f;
-                    Util.PlaySound(GameManager.instance.chaseSoundEvent.Path,gameObject);
+                    Util.PlaySound(GameManager.chaseSoundEvent,gameObject);
                 }
                 break;
             case MonsterState.WINDUP:
@@ -102,13 +102,13 @@ public class Monster4 : MonsterController
                 if (_soundTimer >= timeBetweenPlayChase)
                 {
                     _soundTimer = 0f;
-                    Util.PlaySound(GameManager.instance.chaseSoundEvent.Path,gameObject);
+                    Util.PlaySound(GameManager.chaseSoundEvent,gameObject);
                 }
                 ai.canMove = true;
                 ai.destination = player.transform.position;
                 if (_attack != null && _attack.Fire())
                 {
-                    Util.PlaySound(GameManager.instance.jumpScareSoundEvent.Path,gameObject);
+                    Util.PlaySound(GameManager.jumpScareSoundEvent,gameObject);
                     Destroy(gameObject);
                 }
                 break;

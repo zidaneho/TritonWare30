@@ -28,6 +28,10 @@ public class Switchbox : MonoBehaviour, IInteractable
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         SwitchValue(turnedOn);
+        if (turnedOn)
+        {
+            StartCoroutine(DurationCoroutine());
+        }
     }
 
     public void OnInteract(GameObject interactor)

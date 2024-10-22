@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 29313591}
   - component: {fileID: 29313590}
   - component: {fileID: 29313594}
+  - component: {fileID: 29313595}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -238,27 +239,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368bcf921469f0744b281e100f75e187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverSoundEvent:
+  hoverSoundEvent: '"event:/hover"'
+  clickSoundEvent: '"event:/click"'
+  pauseSoundEvent: '"event:/pause"'
+--- !u!114 &29313595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29313589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34840f97d0e5c0940a185aee65e14f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMusicEvent:
     Guid:
-      Data1: 1158162398
-      Data2: 1103614058
-      Data3: -435822936
-      Data4: 1109279812
-    Path: event:/hover
-  clickSoundEvent:
+      Data1: 29733428
+      Data2: 1079634450
+      Data3: -1942955358
+      Data4: 1687089678
+    Path: event:/main_menu_bg
+  windAmbienceEvent:
     Guid:
-      Data1: 1796984156
-      Data2: 1312427697
-      Data3: 165785994
-      Data4: -1855235651
-    Path: event:/click
-  pauseSoundEvent:
-    Guid:
-      Data1: 1473514812
-      Data2: 1136359324
-      Data3: 1549461397
-      Data4: -1708633947
-    Path: event:/pause
+      Data1: 1031483008
+      Data2: 1279256371
+      Data3: -647192660
+      Data4: 971028797
+    Path: event:/wind
 --- !u!1 &294636471
 GameObject:
   m_ObjectHideFlags: 0

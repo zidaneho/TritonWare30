@@ -12,9 +12,8 @@ public class FlashlightComponent : MonoBehaviour
     [SerializeField] private ProgressBar batteryBar;
     [SerializeField] private FadeUI batteryFade;
     [SerializeField] private float batteryFadeTolerance;
-    [Header("FMOD")] 
-    [SerializeField] private EventReference turnOnSoundEvent;
-    [SerializeField] private EventReference turnOffSoundEvent;
+    [Header("FMOD")] private string turnOnSoundEvent = "event:/flashlight_on";
+    private string turnOffSoundEvent = "event:/flashlight_off";
     [Header("Settings")] 
     [SerializeField] private float maxBattery = 15f;
     [SerializeField] private float rotationSpeed = 10f;
@@ -61,11 +60,11 @@ public class FlashlightComponent : MonoBehaviour
             _isTurnedOn = !_isTurnedOn;
             if (_isTurnedOn)
             {
-                Util.PlaySound(turnOnSoundEvent.Path, gameObject);
+                Util.PlaySound(turnOnSoundEvent, gameObject);
             }
             else
             {
-                Util.PlaySound(turnOffSoundEvent.Path, gameObject);
+                Util.PlaySound(turnOffSoundEvent, gameObject);
             }
         }
         else if (_battery <= 0)

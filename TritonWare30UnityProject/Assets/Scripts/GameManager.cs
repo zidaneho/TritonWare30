@@ -9,10 +9,10 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Monster2Spawner[] monster2Spawners;
     [SerializeField] private Monster3Spawner[] monster3Spawners;
-    [SerializeField] public EventReference jumpScareSoundEvent;
-    [SerializeField] public EventReference idleSoundEvent;
-    [SerializeField] public  EventReference chaseSoundEvent;
-    [SerializeField] public EventReference flickerLightsSoundEvent;
+    public const string jumpScareSoundEvent = "event:/jumpscare";
+    public const string idleSoundEvent = "event:/idle";
+    public const  string chaseSoundEvent = "event:/chase";
+    public const string flickerLightsSoundEvent = "event:/flickering_light";
 
     public static GameManager instance { get; private set; }
 
